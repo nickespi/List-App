@@ -1,0 +1,62 @@
+$max_width: 1100px;
+$gutter: percentage(15px / ($max_width - 40px));
+$footer_height: 200px;
+
+ // @start COLORS -------------------- //
+$maincolor: #17a;
+$hoverlight: lighten($maincolor, 7%);
+$hoverdark: darken($maincolor, 10%);
+$bordercolor: rgba(0, 0, 0, 0.1);
+$linkcolor: #17a;
+$grey: #efefef;
+
+// @start FONTS -------------------- //
+$font1:Museo Sans, Arial, 'Liberation Sans', FreeSans, sans-serif;
+$font2:Museo Slab, Arial, 'Liberation Sans', FreeSans, sans-serif;
+	
+	$basefont:18;
+    $baseh1:24;
+    $baseh2:30;
+    $baseh3:24;
+    $baseh4:17;
+    $baseh5:14;
+    $baseh6:14;
+
+ @function calc-em($target, $context: $basefont) {
+        @return ($target / $context) * 1em;
+    }
+   
+ // @start BREAKPOINTS -------------------- //
+$break-small: 540px;
+$break-large: 1024px;
+
+@mixin breakpoint($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+}
+
+@mixin inline-block {
+        display:inline-block;
+        vertical-align:baseline;
+        zoom:1;
+        *display:inline;
+        *vertical-align:auto;
+    }
+
+@mixin noisyBG {
+  background-image: url(images/noise.png);
+}
+
+ @mixin border-radius($value) {
+        -moz-border-radius:$value;
+          -webkit-border-radius:$value;
+             border-radius:$value;
+    }
+
