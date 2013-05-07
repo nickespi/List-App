@@ -273,10 +273,12 @@ fieldset {
 	.options ul, 
 	.check {
 		margin-left: 25%;
+		@include breakpoint(handhelds) {margin-left: 0;}
 	}
 
 	em {
 	margin: .5em 0 .5em 25%;
+	@include breakpoint(handhelds) { margin: .5em 0 .5em 0;}
 	display: block;
 	color: #666;
 	font-size: 0.875em;
@@ -305,6 +307,7 @@ label,
 fieldset.options legend {
 	float: left;
 	width: 25%;
+	@include breakpoint(handhelds) { width: 100% ;}
 	padding: 0;
 	color: inherit;
 }
@@ -317,6 +320,7 @@ input.text,
 textarea,
 select {
 	width: 75%;
+	@include breakpoint(handhelds) { width: 100% ;}
 	box-sizing: border-box;
 	background-color: #eee;
 	border: solid 1px #ccc;
@@ -354,6 +358,7 @@ input.search {
 
 input.search {
 	width: 23%;
+	@include breakpoint(handhelds) { margin-top: 5px; }
 }
 /**** Navigation ****/
 .horizontal {

@@ -23,15 +23,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/index.kit" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/index.kit",
-      "outputAbbreviatedPath" : "\/index.html",
-      "fileType" : 65536
-    },
     "\/_assets\/css\/images\/noise.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -42,6 +33,15 @@
       "outputAbbreviatedPath" : "\/_assets\/css\/images\/noise.png",
       "initialSize" : 95,
       "fileType" : 8192
+    },
+    "\/index.kit" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/index.kit",
+      "outputAbbreviatedPath" : "\/index.html",
+      "fileType" : 65536
     },
     "\/_assets\/js\/app-ck.js" : {
       "ignoreWasSetByUser" : 0,

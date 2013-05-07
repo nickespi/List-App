@@ -258,11 +258,19 @@ fieldset {
   fieldset .options ul,
   fieldset .check {
     margin-left: 25%; }
+    @media only screen and (max-width: 540px) {
+      fieldset div.submit,
+      fieldset .options ul,
+      fieldset .check {
+        margin-left: 0; } }
   fieldset em {
     margin: 0.5em 0 0.5em 25%;
     display: block;
     color: #666;
     font-size: 0.875em; }
+    @media only screen and (max-width: 540px) {
+      fieldset em {
+        margin: 0.5em 0 0.5em 0; } }
   fieldset abbr[title="Required"] {
     color: #900;
     font-weight: 400;
@@ -282,6 +290,10 @@ fieldset.options legend {
   width: 25%;
   padding: 0;
   color: inherit; }
+  @media only screen and (max-width: 540px) {
+    label,
+    fieldset.options legend {
+      width: 100%; } }
 
 label.check {
   float: none; }
@@ -297,6 +309,11 @@ select {
   padding: 0.5em 0.35em;
   color: #444;
   font-weight: 100; }
+  @media only screen and (max-width: 540px) {
+    input.text,
+    textarea,
+    select {
+      width: 100%; } }
   input.text:focus,
   textarea:focus,
   select:focus {
@@ -332,6 +349,9 @@ input.search {
 
 input.search {
   width: 23%; }
+  @media only screen and (max-width: 540px) {
+    input.search {
+      margin-top: 5px; } }
 
 /**** Navigation ****/
 .horizontal {
