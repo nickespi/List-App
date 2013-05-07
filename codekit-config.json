@@ -11,18 +11,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/_assets\/scss\/_config.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_assets\/scss\/_config.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/_assets\/css\/_config.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/_assets\/css\/images\/noise.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -42,6 +30,18 @@
       "inputAbbreviatedPath" : "\/index.kit",
       "outputAbbreviatedPath" : "\/index.html",
       "fileType" : 65536
+    },
+    "\/_assets\/scss\/_config.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_assets\/scss\/_config.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/_assets\/css\/_config.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     },
     "\/_assets\/js\/app-ck.js" : {
       "ignoreWasSetByUser" : 0,
@@ -109,15 +109,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/about.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/about.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/slider.kit" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -126,6 +117,15 @@
       "inputAbbreviatedPath" : "\/slider.kit",
       "outputAbbreviatedPath" : "\/slider.html",
       "fileType" : 65536
+    },
+    "\/about.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/about.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/_assets\/css\/screen.css" : {
       "ignoreWasSetByUser" : 0,
@@ -156,6 +156,15 @@
       "outputAbbreviatedPath" : "\/about.html",
       "fileType" : 65536
     },
+    "\/_includes\/_header.kit" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_includes\/_header.kit",
+      "outputAbbreviatedPath" : "\/_includes\/_header.html",
+      "fileType" : 65536
+    },
     "\/_assets\/js\/plugins-ck.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -166,15 +175,6 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/_assets\/js\/plugins-ck-ck.js",
       "fileType" : 64
-    },
-    "\/_includes\/_header.kit" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_includes\/_header.kit",
-      "outputAbbreviatedPath" : "\/_includes\/_header.html",
-      "fileType" : 65536
     },
     "\/_assets\/js\/html5shiv.js" : {
       "ignoreWasSetByUser" : 0,
