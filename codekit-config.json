@@ -54,6 +54,17 @@
       "outputAbbreviatedPath" : "\/_assets\/js\/app-ck-ck.js",
       "fileType" : 64
     },
+    "\/_assets\/js\/jquery.sidr.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_assets\/js\/jquery.sidr.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/_assets\/js\/jquery.sidr.min-ck.js",
+      "fileType" : 64
+    },
     "\/_assets\/scss\/screen.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -98,15 +109,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/slider.kit" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/slider.kit",
-      "outputAbbreviatedPath" : "\/slider.html",
-      "fileType" : 65536
-    },
     "\/about.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -115,6 +117,15 @@
       "inputAbbreviatedPath" : "\/about.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
+    },
+    "\/slider.kit" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/slider.kit",
+      "outputAbbreviatedPath" : "\/slider.html",
+      "fileType" : 65536
     },
     "\/_assets\/css\/screen.css" : {
       "ignoreWasSetByUser" : 0,
@@ -145,15 +156,6 @@
       "outputAbbreviatedPath" : "\/about.html",
       "fileType" : 65536
     },
-    "\/_includes\/_header.kit" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_includes\/_header.kit",
-      "outputAbbreviatedPath" : "\/_includes\/_header.html",
-      "fileType" : 65536
-    },
     "\/_assets\/js\/plugins-ck.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -165,16 +167,14 @@
       "outputAbbreviatedPath" : "\/_assets\/js\/plugins-ck-ck.js",
       "fileType" : 64
     },
-    "\/_assets\/js\/jquery.flexslider-min.js" : {
+    "\/_includes\/_header.kit" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_assets\/js\/jquery.flexslider-min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/_assets\/js\/jquery.flexslider-min-ck.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/_includes\/_header.kit",
+      "outputAbbreviatedPath" : "\/_includes\/_header.html",
+      "fileType" : 65536
     },
     "\/_assets\/js\/html5shiv.js" : {
       "ignoreWasSetByUser" : 0,
@@ -185,6 +185,17 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/_assets\/js\/html5shiv-ck.js",
+      "fileType" : 64
+    },
+    "\/_assets\/js\/jquery.flexslider-min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_assets\/js\/jquery.flexslider-min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/_assets\/js\/jquery.flexslider-min-ck.js",
       "fileType" : 64
     },
     "\/_assets\/css\/images\/bg_direction_nav.png" : {
@@ -206,6 +217,27 @@
       "inputAbbreviatedPath" : "\/index.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
+    },
+    "\/_assets\/css\/_jquery.sidr.light.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_assets\/css\/_jquery.sidr.light.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
+    "\/_assets\/scss\/_jquery.sidr.light.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_assets\/scss\/_jquery.sidr.light.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/_assets\/css\/_jquery.sidr.light.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     },
     "\/slider.html" : {
       "ignoreWasSetByUser" : 0,

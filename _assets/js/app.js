@@ -1,6 +1,9 @@
 $(document).ready(function() { 
 			                
-			        
+   $('#responsive-menu-button').sidr({
+      name: 'sidr-main',
+      source: '#nav_pri'
+    });       
 
   $(window).load(function() {
     $('.slider').flexslider({
