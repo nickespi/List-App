@@ -38,7 +38,7 @@ header {
   @media only screen and (max-width: 540px) {
     header {
       float: left;
-      margin-top: 40px; } }
+      margin-top: 50px; } }
 
 #branding {
   float: left;
@@ -110,6 +110,9 @@ header {
   @media only screen and (min-width: 541px) and (max-width: 1023px) {
     #main {
       width: 100%; } }
+  @media only screen and (max-width: 540px) {
+    #main {
+      padding: 20px 0; } }
 
 #sidebar {
   width: 31.515151515152%;
@@ -615,8 +618,6 @@ html[xmlns] .slides {
   overflow-y: auto;
   font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
   font-size: 15px;
-  background: #f8f8f8;
-  background-image: url(images/noise.png);
   color: #333;
   -webkit-box-shadow: inset 0 0 5px 5px #ebebeb;
   -moz-box-shadow: inset 0 0 5px 5px #ebebeb;
@@ -753,12 +754,6 @@ html[xmlns] .slides {
 
 .sidr input[type=button]:hover, .sidr input[type=submit]:hover {
   background: rgba(51, 51, 51, 0.9); }
-
-#mobile-header {
-  display: none; }
-  @media only screen and (max-width: 540px) {
-    #mobile-header {
-      display: block; } }
 
 #mobile-header {
   display: none;

@@ -40,7 +40,7 @@ a {
 header {
 	margin-bottom: 20px;
 	width: 100%;
-	@include breakpoint(handhelds) { float: left; margin-top: 40px;}
+	@include breakpoint(handhelds) { float: left; margin-top: 50px;}
 }
 #branding {
 	float: left;
@@ -107,6 +107,7 @@ header {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	padding: 20px;
+	@include breakpoint(handhelds) { padding: 20px 0;}
 	float: left;
 }
 
