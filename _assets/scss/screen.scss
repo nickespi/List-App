@@ -448,8 +448,12 @@ input.search {
 	}
 
 	img {
-		max-width: 100%;
 	}
+}
+
+.flexslider {
+	@include breakpoint(handhelds) { border: none !important; margin: 0 -20px 30px !important; }
+	
 }
 @import "flexslider";
 @import "jquery.sidr.light";
