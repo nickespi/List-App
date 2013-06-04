@@ -1,0 +1,313 @@
+<!-- $projectName = New Project -->
+<!-- $pageTitle = Style Guide -->
+
+
+<!-- @import "_includes/_header.kit" -->
+
+	<section role="main">
+		<div id="main">
+			<h2><!--$pageTitle--></h2>
+		    <p>The header above is an <code>H2</code> element. This element is used for section headers within your document.</p>
+		    <h3>Third-Level Header</h3>
+		    <p>The header above is an <code>H3</code> element. This element is used for a page-level header that falls below the <code>H2</code> in the document hierarchy</p>
+		    <h4>Fourth-Level Header</h4>
+		     <p>The header above is an <code>H4</code> element. This element is used for a page-level header that falls below the <code>H3</code> in the document hierarchy</p>
+		    <h5>Fifth-Level Header</h5>
+		    <p>The header above is an <code>H5</code> element. This element is used for a page-level header that falls below the <code>H4</code> in the document hierarchy</p>
+		    <h6>Sixth-Level Header</h6>
+		    <p>The header above is an <code>H6</code> element. This element is used for a page-level header that falls below the <code>H5</code> in the document hierarchy</p>
+
+		    <h2>Grouping content</h2>
+		    <h3>Paragraphs</h3>
+		    <p>All paragraphs are wrapped in the <code>p</code> tag. For example the code for this paragraph looks like the below.</p>
+		    
+		    <div class="example">
+		      <pre><code>&lt;p&gt;
+		        All paragraphs are wrapped in the &lt;code&gt;p&lt;/code&gt; tag. For example the code for this paragraph looks like the below.
+		        &lt;/p&gt;
+		      </code></pre>
+		    </div>
+		    <h3>Horizontal Rule</h3>
+		    <p>The <code>hr</code> element represents a paragraph-level thematic break.</p>
+		    <div class="example">
+		      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		      <hr>
+		      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		    </div>
+		    <h3>Pre-formatted text</h3>
+		    <p>The <code>pre</code> element represents a block of pre-formatted text, in which structure is represented by typographic conventions rather than by elements. Code inside of the <code>code</code> element is often found inside a <code>pre</code> tag in order to preserve the syntax structure of the coding language.</p>
+		    <div class="example">
+		      <pre><code>.wrapper {
+		        margin: 0 auto;
+		        width: 960px;
+		      }</code></pre>
+		    </div>
+		    <h3>Blockquotes</h3>
+		    <p>The <code>blockquote</code> element should be used when quoting another source.</p>
+		    <div class="example">
+		      <blockquote cite="http://www.imdb.com/title/tt0330373/"><p>You place too much importance... on the so-called purity of blood!  You fail to recognize that it matters not what someone is born, but what they grow to be!</p></blockquote>
+		      <p>J.K. Rowling, <cite><a href="http://www.imdb.com/title/tt0330373/">Harry Potter and the Goblet of Fire</a></cite>, 2000, spoken by the character Albus Dumbledore
+		    </div>
+		    <h3>Ordered list</h3>
+		    <p>The <code>ol</code> element is used to...</p>
+		    <div class="example">
+		      <ol>
+		        <li>Houston Astros</li>
+		        <li>Houston Rockets
+		          <ol>
+		            <li>Jeremy Lin</li>
+		            <li>James Harden</li>
+		          </ol>
+		        </li>
+		        <li>Houston Texans</li>
+		      </ol>
+		    </div>
+		    <h3>Unordered list</h3>
+		    <p>The <code>ul</code> element is used to...</p>
+		    <div class="example">
+		      <ul>
+		        <li>Houston Astros</li>
+		        <li>Houston Rockets
+		          <ul>
+		            <li>Jeremy Lin</li>
+		            <li>James Harden</li>
+		          </ul>
+		        </li>
+		        <li>Houston Texans</li>
+		      </ul>
+		    </div>
+		    <p>Sometimes we may want each list item to contain block elements, typically a paragraph or two.</p>
+		    <div class="example">
+		      <ul>
+		        <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></li>
+		        <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></li>
+		        <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></li>
+		      </ul>
+		    </div>
+		    <h3>Definition list</h3>
+		    <p>The <code>dl</code> element is used for another type of list called a definition list.</p>
+		    <div class="example">
+		      <dl>
+		        <dt>Houston Astros</dt>
+		        <dd>The professional baseball team in Houston founded in 1965.</dd>
+		        <dt>Houston Rockets</dt>
+		        <dd>The professional basketball team in Houston.</dd>
+		        <dt>Houston Texans</dt>
+		        <dd>Andre Johnson, what?</dd>
+		      </dl>
+		    </div>
+		    <h3>Figures</h3>
+		    <p>Figures are used for...</p>
+		    <h2>Text-level Semantics</h2>
+		    <p>There are a number of inline HTML elements you may use anywhere within other elements.</p>
+		    <h3>Links and anchors</h3>
+		    <p>The <code>a</code> element is used to link to other pages on your website or to external pages on the web.</p>
+		    <div class="example">
+		      <p><a href="http://google.com">This is a link to Google</a></p>
+		    </div>
+		    <h3>Stressed emphasis</h3>
+		    <p>The <code>em</code> element is used to denote text with stressed emphasis.</p>
+		    <div class="example">
+		      <p>You <em>really</em> need to watch Downton Abbey.</p>
+		    </div>
+		    <h3>Stong Importance</h3>
+		    <p>The <code>strong</code> element is used to denote text with strong importance. Where bolding is used for stylistic differentiation, the b element may be preferable. Example:</p>
+		    <div class="example">
+		      <p>Do <strong>not</strong> go in there!</p>
+		    </div>
+		    <h2>Tabular Data</h2>
+		    <p>Tables should be used when displaying tabular data. The <code>thead</code>, <code>tfoot</code> and <code>tbody</code> elements enable you to group rows within each a table.</p>
+		    <p>If you use these elements, you must use every element. They should appear in this order: <code>thead</code>, <code>tfoot</code> and <code>tbody</code>, so that browsers can render the foot before receiving all the data. You must use these tags within the table element.</p>
+		    <div class="example">
+		                        <table>
+		                            <caption>The Very Best Eggnog</caption>
+		                            <colgroup>
+		                                <col style="width:15em;" />
+		                                <col style="width:6em;" />
+		                                <col style="width:6em;" />
+		                            </colgroup>
+		                            <thead>
+		                                <tr>
+		                                    <th scope="col">Ingredients</th>
+		                                    <th scope="col">Serves 12</th>
+		                                    <th scope="col">Serves 24</th>
+		                                </tr>
+		                            </thead>
+		                            <tbody>
+		                                <tr>
+		                                    <td>Milk</td>
+		                                    <td>1 quart</td>
+		                                    <td>2 quart</td>
+		                                </tr>
+		                                <tr>
+		                                    <td>Cinnamon Sticks</td>
+		                                    <td>2</td>
+		                                    <td>1</td>
+		                                </tr>
+		                                <tr>
+		                                    <td>Vanilla Bean, Split</td>
+		                                    <td>1</td>
+		                                    <td>2</td>
+		                                </tr>
+		                                <tr>
+		                                    <td>Cloves</td>
+		                                    <td>5</td>
+		                                    <td>10</td>
+		                                </tr>
+		                                <tr>
+		                                    <td>Mace</td>
+		                                    <td>10 blades</td>
+		                                    <td>20 blades</td>
+		                                </tr>
+		                                <tr>
+		                                    <td>Egg Yolks</td>
+		                                    <td>12</td>
+		                                    <td>24</td>
+		                                </tr>
+		                                <tr>
+		                                    <td>Cups Sugar</td>
+		                                    <td>1 &frac12; cups</td>
+		                                    <td>3 cups</td>
+		                                </tr>
+		                                <tr>
+		                                    <td>Dark Rum</td>
+		                                    <td>1 &frac12; cups</td>
+		                                    <td>3 cups</td>
+		                                </tr>
+		                                <tr>
+		                                    <td>Brandy</td>
+		                                    <td>1 &frac12; cups</td>
+		                                    <td>3 cups</td>
+		                                </tr>
+		                                <tr>
+		                                    <td>Vanilla</td>
+		                                    <td>1 tbsp</td>
+		                                    <td>2 tbsp</td>
+		                                </tr>
+		                                <tr>
+		                                    <td>Half-and-half or Light Cream</td>
+		                                    <td>1 quart</td>
+		                                    <td>2 quart</td>
+		                                </tr>
+		                                <tr>
+		                                    <td>Freshly grated nutmeg to taste</td>
+		                                    <td></td>
+		                                    <td></td>
+		                                </tr>
+		                            </tbody>
+		                        </table>
+		    </div>
+		    <h2>Forms</h2>
+		    <p>Forms can be used when you wish to collect data from users. The fieldset element enables you to group related fields within a form, and each one should contain a corresponding legend. The label element ensures field descriptions are associated with their corresponding form widgets.</p>
+		    <div class="example">
+		      <form action="#">
+		                            <fieldset>
+		                                <legend>Legend</legend>
+		                                <div>
+		                                    <label for="text">Text Input <abbr title="Required">*</abbr></label>
+		                                    <input id="text" class="text" type="text"/>
+		                                    <em>Note about this field</em>
+		                                </div>
+		                                <div>
+		                                    <label for="password">Password</label>
+		                                    <input id="password" class="text" type="password"/>
+		                                    <em>Note about this field</em>
+		                                </div>
+		                                <div>
+		                                    <label for="url">Web Address</label>
+		                                    <input id="url" class="text" type="url"/>
+		                                    <em>Note about this field</em>
+		                                </div>
+		                                <div>
+		                                    <label for="email">Email Address</label>
+		                                    <input id="email" class="text" type="email"/>
+		                                    <em>Note about this field</em>
+		                                </div>
+		                                <div>
+		                                    <label for="search" class="text_reader_text">Search</label>
+		                                    <input id="search" class="text" type="search"/><input id="password" class="search button" type="submit" value="Search"/>
+		                                    <em>Note about this field</em>
+		                                </div>
+		                                <div>
+		                                    <label for="textarea">Textarea</label>
+		                                    <textarea id="textarea" rows="8" cols="48"></textarea>
+		                                    <em class="clear">Note about this field</em>
+		                                </div>
+		                                <div>
+		                                    <label for="checkbox">Single Checkbox</label>
+		                                    <label for="checkbox" class="check"><input id="checkbox" type="checkbox" class="checkbox"/> Label</label>
+		                                </div>
+		                                <div>
+		                                    <label for="select">Select</label>
+		                                    <select id="select">
+		                                        <optgroup label="Option Group">
+		                                            <option>Option One</option>
+		                                            <option>Option Two</option>
+		                                            <option>Option Three</option>
+		                                        </optgroup>
+		                                    </select>
+		                                    <em>Note about this selection</em>
+		                                </div>
+		                                <fieldset class="options">
+		                                    <legend>Checkbox <abbr title="Required">*</abbr></legend>
+		                                    <ul>
+		                                        <li><label for="checkbox1"><input id="checkbox1" name="checkbox" type="checkbox" checked="checked" /> Choice A</label></li>
+		                                        <li><label for="checkbox2"><input id="checkbox2" name="checkbox" type="checkbox" /> Choice B</label></li>
+		                                        <li><label for="checkbox3"><input id="checkbox3" name="checkbox" type="checkbox" /> Choice C</label></li>
+		                                    </ul>
+		                                </fieldset>
+		                                <fieldset class="options">
+		                                    <legend>Radio</legend>
+		                                    <ul>
+		                                        <li><label for="radio1"><input id="radio1" name="radio" type="radio" class="radio" checked="checked" /> Option 1</label></li>
+		                                        <li><label for="radio2"><input id="radio2" name="radio" type="radio" class="radio" /> Option 2</label></li>
+		                                    </ul>
+		                                </fieldset>
+		                                <div class="submit">
+		                                    <input class="button" type="submit" value="Post Comment" />
+		                                    <input class="button" type="button" value="Preview" />
+		                                    <a href="#">Cancel</a>
+		                                </div>
+		                            </fieldset>
+		                        </form>
+		    </div>
+		    <h2>Patterns</h2>
+		    <p>This section shows design and mark-up patterns unique to this site.</p>
+		    <h3>Pagination</h3>
+		    <p>Used to navigate between pages of search results.</p>
+		    <div class="example">
+		        <ul role="navigation" class="pagination horizontal">
+		            <li><a href="#">Previous</a></li>
+		            <li><a href="#">1</a></li>
+		            <li><a href="#" class="current_page">2</a></li>
+		            <li><a href="#">3</a></li>
+		            <li><a href="#">4</a></li>
+		            <li><a href="#">Next</a></li>
+		        </ul>
+		    </div>
+
+		</div>
+	 </section>
+
+	<div id="sidebar">
+		<ul>
+		    <li><a href="index.html">Home</a></li>
+		    <li><a href="about.html">About</a></li>
+		    <li><a href="slider.html">Slider Page</a></li>
+		    <li><a href="contact.html">Contact</a></li>
+		</ul>
+	</div>
+	 
+	 
+	  
+<!-- @import "_includes/_footer.kit" -->

@@ -7,7 +7,6 @@ body {
 
 body {
   color: #444;
-  background-color: #e2e2e2;
   background-image: url(images/noise.png);
   font-weight: 300;
   line-height: 1.4;
@@ -31,6 +30,9 @@ a {
   @media only screen and (max-width: 540px) {
     .wrapper {
       width: 100%; } }
+  @media only screen and (max-width: 540px) {
+    .wrapper {
+      padding: 0; } }
 
 header {
   margin-bottom: 20px;
@@ -38,7 +40,7 @@ header {
   @media only screen and (max-width: 540px) {
     header {
       float: left;
-      margin-top: 50px; } }
+      margin-top: 0px; } }
 
 #branding {
   float: left;
@@ -97,6 +99,38 @@ header {
         #nav_pri ul li a:hover, #nav_pri ul li a:focus {
           color: #148eca; }
 
+.mobile-header {
+  display: none;
+  float: left;
+  margin-bottom: 20px;
+  background-color: #148eca;
+  width: 100%; }
+  @media only screen and (max-width: 540px) {
+    .mobile-header {
+      display: block; } }
+  .mobile-header a.navi {
+    border-bottom: none;
+    display: block;
+    background-color: #1177aa;
+    color: #fff;
+    padding: 15px;
+    height: 100%; }
+  .mobile-header .nav_mobile ul {
+    list-style-type: none;
+    margin: 0; }
+    .mobile-header .nav_mobile ul li {
+      display: block;
+      width: 100%;
+      margin: 0; }
+      .mobile-header .nav_mobile ul li a {
+        border-bottom: none;
+        display: block;
+        color: #fff;
+        padding: 15px;
+        height: 100%; }
+        .mobile-header .nav_mobile ul li a:hover {
+          background-color: #0c577c; }
+
 #main {
   width: 66.6666%;
   -webkit-box-sizing: border-box;
@@ -112,7 +146,7 @@ header {
       width: 100%; } }
   @media only screen and (max-width: 540px) {
     #main {
-      padding: 20px 0; } }
+      padding: 20px 20px; } }
 
 #sidebar {
   width: 31.515151515152%;
@@ -168,24 +202,29 @@ h1 {
 
 h2 {
   font-size: 1.66667em;
+  margin: 1em 0;
   color: #1177aa;
   font-weight: 300; }
 
 h3 {
   font-size: 1.33333em;
+  margin: 1em 0 0;
   font-weight: 400; }
 
 h4 {
-  font-size: 0.94444em;
+  font-size: 1.22222em;
+  margin: 1.1em 0 0;
   font-weight: 400; }
 
 h5 {
-  font-size: 0.77778em;
+  font-size: 1em;
+  margin: 1.5em 0 0;
   text-transform: uppercase;
   font-weight: 400; }
 
 h6 {
-  font-size: 0.77778em;
+  font-size: 1em;
+  margin: 1.5em 0 0;
   text-transform: uppercase;
   font-weight: 400; }
 
@@ -414,17 +453,6 @@ input.search {
   .pagination li:last-child a:hover, .pagination li:last-child a:focus, .pagination li:first-child a:hover, .pagination li:first-child a:focus {
     text-decoration: none; }
 
-.slider {
-  position: relative;
-  clear: both; }
-  .slider li {
-    margin: 0; }
-
-@media only screen and (max-width: 540px) {
-  .flexslider {
-    border: none !important;
-    margin: 0 -20px 30px !important; } }
-
 /*
  * jQuery FlexSlider v2.0
  * http://www.woothemes.com/flexslider/
@@ -629,6 +657,17 @@ html[xmlns] .slides {
   .flex-direction-nav .flex-next {
     opacity: 1;
     right: 5px; } }
+.slider {
+  position: relative;
+  clear: both; }
+  .slider li {
+    margin: 0; }
+
+@media only screen and (max-width: 540px) {
+  .flexslider {
+    border: none !important;
+    margin: 0 -20px 30px !important; } }
+
 .sidr {
   display: none;
   position: absolute;
@@ -777,20 +816,3 @@ html[xmlns] .slides {
 
 .sidr input[type=button]:hover, .sidr input[type=submit]:hover {
   background: rgba(51, 51, 51, 0.9); }
-
-#mobile-header {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #1177aa;
-  width: 100%; }
-  @media only screen and (max-width: 540px) {
-    #mobile-header {
-      display: block; } }
-  #mobile-header a {
-    border-bottom: none;
-    float: left;
-    color: #fff;
-    padding: 15px;
-    height: 100%; }

@@ -54,6 +54,15 @@
       "outputAbbreviatedPath" : "\/_assets\/js\/app-ck-ck.js",
       "fileType" : 64
     },
+    "\/styleguide.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/styleguide.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/_assets\/js\/jquery.sidr.min.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -176,6 +185,17 @@
       "outputAbbreviatedPath" : "\/_assets\/js\/plugins-ck-ck.js",
       "fileType" : 64
     },
+    "\/_assets\/js\/jquery.navi.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_assets\/js\/jquery.navi.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/_assets\/js\/jquery.navi-ck.js",
+      "fileType" : 64
+    },
     "\/_assets\/js\/jquery.flexslider-min.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -187,15 +207,15 @@
       "outputAbbreviatedPath" : "\/_assets\/js\/jquery.flexslider-min-ck.js",
       "fileType" : 64
     },
-    "\/_assets\/js\/html5shiv.js" : {
+    "\/_assets\/js\/jquery.navi-ck.js" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_assets\/js\/html5shiv.js",
+      "inputAbbreviatedPath" : "\/_assets\/js\/jquery.navi-ck.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/_assets\/js\/html5shiv-ck.js",
+      "outputAbbreviatedPath" : "\/_assets\/js\/jquery.navi-ck-ck.js",
       "fileType" : 64
     },
     "\/_assets\/css\/images\/bg_direction_nav.png" : {
@@ -208,6 +228,26 @@
       "outputAbbreviatedPath" : "\/_assets\/css\/images\/bg_direction_nav.png",
       "initialSize" : 1866,
       "fileType" : 8192
+    },
+    "\/_assets\/js\/html5shiv.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_assets\/js\/html5shiv.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/_assets\/js\/html5shiv-ck.js",
+      "fileType" : 64
+    },
+    "\/styleguide.kit" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/styleguide.kit",
+      "outputAbbreviatedPath" : "\/styleguide.html",
+      "fileType" : 65536
     },
     "\/index.html" : {
       "ignoreWasSetByUser" : 0,

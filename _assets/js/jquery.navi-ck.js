@@ -1,0 +1,1 @@
+$(document).ready(function(){var e="#nav_pri",t=".nav_mobile",n="vertical";$(t).hide();n==="vertical"&&$(".navi").click(function(n){n.preventDefault();var r=$(e).html();$(t).html(r);$(t).slideToggle(300)});n==="horizontal"&&$(".navi").click(function(t){t.preventDefault();var n=$(e).html()})});

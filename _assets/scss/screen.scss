@@ -11,7 +11,6 @@ body {
 
 body {
 	color: #444;
-	background-color: #e2e2e2;
 	@include noisyBG;
 	font-weight: 300;
 	line-height: 1.4;
@@ -36,11 +35,12 @@ a {
 	 box-sizing: border-box;
 	margin: 0px auto;
 	padding: 20px;
+	@include breakpoint(handhelds) { padding: 0 ;}
 }
 header {
 	margin-bottom: 20px;
 	width: 100%;
-	@include breakpoint(handhelds) { float: left; margin-top: 50px;}
+	@include breakpoint(handhelds) { float: left; margin-top: 0px;}
 }
 #branding {
 	float: left;
@@ -98,6 +98,48 @@ header {
 	}
 }
 
+.mobile-header {
+	display: none;
+	@include breakpoint(handhelds) { display: block;}
+	float: left;
+	margin-bottom: 20px;
+	background-color: $hoverlight;
+	width: 100%;
+
+	a.navi {
+		border-bottom: none;
+		display: block;
+		background-color: $maincolor;
+		color: #fff;
+		padding: 15px;
+		height: 100%;
+	}
+
+	.nav_mobile {
+		ul {
+			list-style-type: none;
+			margin: 0;
+
+			li {
+				display: block;
+				width: 100%;
+				margin: 0;
+
+				a {
+					border-bottom: none;
+					display: block;
+					color: #fff;
+					padding: 15px;
+					height: 100%;
+					
+					&:hover {
+						background-color: $hoverdark;
+					}
+				}
+			}
+		}
+	}
+}
 
 #main	{
 	width: 66.6666%;
@@ -107,7 +149,7 @@ header {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	padding: 20px;
-	@include breakpoint(handhelds) { padding: 20px 0;}
+	@include breakpoint(handhelds) { padding: 20px 20px;}
 	float: left;
 }
 
@@ -162,34 +204,39 @@ h1 {
 
 h2 {
 	font-size: calc-em($baseh2);
+	margin: 1em 0;
 	color: $maincolor;
 	font-weight: 300;
 }
 
 h3 {
 	font-size: calc-em($baseh3);
+	margin: 1em 0 0;
 	font-weight: 400;
 }
 
 h4 {
 	font-size: calc-em($baseh4);
+	margin: 1.1em 0 0;
 	font-weight: 400;
 }
 
 h5 {
 	font-size: calc-em($baseh5);
+	margin: 1.5em 0 0;
 	text-transform: uppercase;
 	font-weight: 400;
 }
 
 h6 {
 	font-size: calc-em($baseh6);
+	margin: 1.5em 0 0;
 	text-transform: uppercase;
 	font-weight: 400;
 }
 
 .example {
-	outline: 1px dashed #ddd;
+	outline: 1px dashed #dddddd;
 	margin: 1em -1em 2em;
 	padding: 0.5em 1em;
 }
@@ -439,6 +486,9 @@ input.search {
 	}
 }
 
+
+@import "flexslider";
+
 .slider {
 	position: relative;
 	clear: both;
@@ -455,26 +505,11 @@ input.search {
 	@include breakpoint(handhelds) { border: none !important; margin: 0 -20px 30px !important; }
 	
 }
-@import "flexslider";
+
+
 @import "jquery.sidr.light";
 
-#mobile-header {
-	display: none;
-	@include breakpoint(handhelds) { display: block;}
-	position: absolute;
-	top: 0;
-	left: 0;
-	background-color: $maincolor;
-	width: 100%;
 
-	a {
-		border-bottom: none;
-		float: left;
-		color: #fff;
-		padding: 15px;
-		height: 100%;
-	}
-}
 
 
 

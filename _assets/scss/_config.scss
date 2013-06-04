@@ -18,9 +18,9 @@ $font2:Museo Slab, Arial, 'Liberation Sans', FreeSans, sans-serif;
     $baseh1:24;
     $baseh2:30;
     $baseh3:24;
-    $baseh4:17;
-    $baseh5:14;
-    $baseh6:14;
+    $baseh4:22;
+    $baseh5:18;
+    $baseh6:18;
 
  @function calc-em($target, $context: $basefont) {
         @return ($target / $context) * 1em;
