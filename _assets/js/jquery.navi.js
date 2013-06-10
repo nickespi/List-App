@@ -1,17 +1,19 @@
 $(document).ready(function() {
 
 	var mainNav = "#nav_pri";
-	var mobileNav = ".nav_mobile";
+	var verticalNav = ".navi_vert";
+	var horizontalNav = ".navi_hor";
 	var orientation = "vertical";
-	$(mobileNav).hide();
+	$(horizontalNav).hide();
+	$(verticalNav).hide();
 
     if (orientation === "vertical") {
 	    $(".navi").click(
 			function (e) {
 				e.preventDefault();
 				var navContent = $(mainNav).html();
-				$(mobileNav).html(navContent);
-				$(mobileNav).slideToggle(300);
+				$(verticalNav).html(navContent);
+				$(verticalNav).slideToggle(300);
 			});
 	}
 
@@ -20,7 +22,7 @@ $(document).ready(function() {
 			function (e) {
 			e.preventDefault();
 			var navContent = $(mainNav).html();
-
+			$(horizontalNav).html(navContent);
 		});
 	}
 });

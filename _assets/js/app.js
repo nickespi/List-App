@@ -1,22 +1,53 @@
-$(document).ready(function() { 
-			                
-  // $('#responsive-menu-button').sidr({
-  //    name: 'sidr-main',
-  //    source: '#nav_pri'
-  //  });       
+console.log("Testing.");
 
-  $(window).load(function() {
-    $('.slider').flexslider({
-    	slideshowSpeed: 6000,
-    	animationSpeed: 600,
-    	controlNav: true,  
-		directionNav: true,
-		useCSS: false,
-		animation: "slide",
-		easing: "easeOutCirc"
-    });
+function newList () {
+  var list = document.getElementById("lists");
+  var listName = prompt("What is your new list's name?");
+  if (listName !== null && listName !== "") {
+    var newListModule = document.createElement("div");
+    newListModule.setAttribute("class","list_wrap");
+    var newListName = document.createElement("h2");
+    var newListNameText = document.createTextNode(listName);
+    var newItemList = document.createElement("ul");
+    newItemList.setAttribute("class","todo_list");
+    newItemList.setAttribute("id","todo_list");
+    var addItem = document.createElement("li");
+    var addItemLink = document.createElement("a");
+    addItemLink.setAttribute("class","add_item");
+    addItemLink.setAttribute("id","add_item");
+    addItemLink.setAttribute("href","#");
+    var addItemLinkText = document.createTextNode("Add Item");
+    addItemLink.appendChild(addItemLinkText);
+    addItem.appendChild(addItemLink);
+    newItemList.appendChild(addItem);
+    newListName.appendChild(newListNameText);
+    newListModule.appendChild(newListName);
+    newListModule.appendChild(newItemList);
+    list.appendChild(newListModule);
+  }
+}
 
-  });
+function newItem () {
+  console.log("test");
+  var list = document.getElementById("todo_list");
+  var listItem = prompt("What is your to-do?");
+  if (listItem !== null && listItem !== ""){
+    var newListItem = document.createElement("li");
+    var newListItemText = document.createTextNode(listItem);
+    newListItem.appendChild(newListItemText);
+    var last = document.getElementById("last");
+    last.parentNode.insertBefore(newListItem,last);
+  }
+}
+
+function initElement () {
+  var addList = document.getElementById("addList");
+  addList.onclick = newList;
+  var addItem = document.getElementsByClassName("add_item");
+
+  for (var i = 0; i < addItem.length; i++) {
+    addItem[i].onclick = newItem;
+  }
+}
 
 
-}); 

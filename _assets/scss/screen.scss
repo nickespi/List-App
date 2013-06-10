@@ -40,8 +40,9 @@ a {
 header {
 	margin-bottom: 20px;
 	width: 100%;
-	@include breakpoint(handhelds) { float: left; margin-top: 0px;}
+	@include breakpoint(handhelds) { margin-top: 0px; float: left;}
 }
+
 #branding {
 	float: left;
 	-webkit-box-sizing: border-box;
@@ -115,7 +116,7 @@ header {
 		height: 100%;
 	}
 
-	.nav_mobile {
+	.navi_vert {
 		ul {
 			list-style-type: none;
 			margin: 0;
@@ -138,12 +139,41 @@ header {
 				}
 			}
 		}
-	}
-}
 
+		ul.nav_hor {
+			list-style-type: none;
+			margin: 0;
+
+			li {
+				display: block;
+				width: 100%;
+				margin: 0;
+
+				a {
+					border-bottom: none;
+					display: block;
+					color: #fff;
+					padding: 15px;
+					height: 100%;
+					
+					&:hover {
+						background-color: $hoverdark;
+					}
+				}
+			}
+		}
+	}
+
+}
+.side_nav {
+	display: none;
+	float: left;
+	width: 70%;
+	margin-left: -100%;
+}
 #main	{
-	width: 66.6666%;
-	@include breakpoint(handhelds) { width: 100% ;}
+	width: 100%;
+	@include breakpoint(handhelds) { width: 100% ; }
 	@include breakpoint(medium-screens) { width: 100% ;}
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -278,7 +308,6 @@ li {
 a {
 	color: $linkcolor;
 	text-decoration: none;
-	border-bottom: 1px solid transparentize($linkcolor, 0.8);
 
 	&:hover,
 	&:focus	{
@@ -486,30 +515,90 @@ input.search {
 	}
 }
 
-
-@import "flexslider";
-
-.slider {
-	position: relative;
-	clear: both;
-
-	li {
-		margin: 0;
-	}
-
-	img {
-	}
-}
-
-.flexslider {
-	@include breakpoint(handhelds) { border: none !important; margin: 0 -20px 30px !important; }
+.list_wrap {
+	float: left;
+	width: 23%;
+	@include breakpoint(medium-screens) { width: 48%; }
+	@include breakpoint(handhelds) { width: 100%; }
+	margin-left: $gutter;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 	
+	h2 {
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+
+	ul.todo_list {
+		list-style-type: none;
+		
+		li {
+			margin-left: 0;
+			padding: 10px 10px 20px 10px;
+			position: relative;
+			background-color: lighten($maincolor, 59%);
+			border-bottom: 1px solid lighten($maincolor, 56%);
+			
+			&:hover {
+				background-color: lighten($maincolor, 56%);
+			}
+
+			&:last-child {
+				background-color: #fff;
+				border-bottom: none;
+			}
+
+			.edit_item,
+			.add_item,
+			.delete_item {
+				font-size: .8em;
+			}
+
+			.edit_item,
+			.delete_item {
+				display: none;
+				position: absolute;
+				bottom: 0px;
+			}
+			
+			.edit_item {
+				left: 10px;
+			}
+
+			.delete_item {
+				left: 40px;
+			}
+			
+			.add_item {
+				border-bottom: 1px solid transparentize($linkcolor, 0.8);
+			}
+
+			&:hover .edit_item,
+			&:hover .delete_item {
+				display: inline;
+			}
+		}
+	}
+
+	#addList {
+		float: left;
+		font-size: 1.1em;
+		padding: 50px 15px 11px 60px;
+		margin: 10px 20px;
+		position: relative;
+
+		span {
+			position: absolute;
+			left: 0;
+			padding: 11px 15px;
+			line-height: 1em;
+			font-size: 1.2em;
+			border-radius: 50%;
+			background-color: lighten($maincolor, 55%);;
+		}
+	}
 }
-
-
-@import "jquery.sidr.light";
-
-
 
 
 
