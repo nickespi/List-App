@@ -18,13 +18,19 @@
 		 <script src='_assets/js/html5shiv.js'></script>
 		<![endif]-->
 	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	  <script src='_assets/js/app.js'></script>
+	  <script src="_assets/js/mustache.js"></script>
 	  <script src='_assets/js/plugins.js'></script>
+	  <script src='_assets/js/jquery.masonry.min.js'></script>
+	  <script src='_assets/js/app.js'></script>
 	  <script src='_assets/js/jquery.navi.js'></script>
 	  
 	  <!--ICONS-->
 	  <link href="assets/favicon.ico" rel="shortcut icon">
 	  <link href="assets/apple-touch-icon.png" rel="apple-touch-icon">
+
+	  <!--TYPEKIT-->
+	  <script type="text/javascript" src="//use.typekit.net/yrx5fia.js"></script>
+	  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	  
 	  <title>List App | Home Page</title>
 	  
@@ -49,54 +55,47 @@
 		    <li><a href="purpose.html">Purpose</a></li>
 		  </ul>
 		</nav>
-		
+		<a href="#" id="addList"><span class="plus">+</span><p>Add List</p></a>
 	 </header>
 
 	<section role="main">
 		<div id="main">
-			<div id="lists">
-				<div class="list_wrap" id="list_wrap">
-					<h2 class="list_title">List Name 1</h2>
-					<ul class="todo_list" id="todo_list">
-						<li>List Item 1 
-							<span><a href="#" class="edit_item">Edit</a></span>
-							<span><a href="#" class="delete_item">Delete</a></span>
-						</li>
-						<li>List Item 2 
-							<span><a href="#" class="edit_item">Edit</a></span>
-							<span><a href="#" class="delete_item">Delete</a></span>
-						</li>
-						<li>A really long list item that is longer than one line and even longer sometimes, you know? 
-							<span><a href="#" class="edit_item">Edit</a></span>
-							<span><a href="#" class="delete_item">Delete</a></span>
-						</li>
-						<li id="last"><a href="#" class="add_item" id="add_item">Add Item</a></li>
-					</ul>
-				</div>
-				<div class="list_wrap">
-					<h2 class="list_title">List Name 2</h2>
-					<ul class="todo_list" id="todo_list">
-						<li>List Item 1 
-							<span><a href="#" class="edit_item">Edit</a></span>
-							<span><a href="#" class="delete_item">Delete</a></span>
-						</li>
-						<li>List Item 2 
-							<span><a href="#" class="edit_item">Edit</a></span>
-							<span><a href="#" class="delete_item">Delete</a></span>
-						</li>
-						<li id="last"><a href="#" class="add_item" id="add_item">Add Item</a></li>
-					</ul>
-				</div>
-			</div>
-			
-			<div class="list_wrap">
-				<a href="#" id="addList"><span class="plus">+</span> <p>Add List</p></a>
-			</div>
+			<div id="lists"></div>
 		</div>
 	 </section>
 	 
 	 
-	  
+	  	<script id="todo-template" type="text/template">
+		  	{{#lists}}
+		  	<div class="list_wrap" id="list_wrap">
+				<h2 class="list_title">{{title}}</h2>
+			  	<ul class="todo_list" id="todo_list {{id}}">
+					{{#todos}}	
+						<li><p class="{{todoStatus}}">{{todo}}</p>
+							<span><a href="#" class="edit_item" id="edit_item {{todoId}}">Edit</a></span>
+							<span><a href="#" class="complete_item" id="complete_item {{todoId}}">Completed</a></span>
+							<span><a href="#" class="delete_item" id="delete_item {{todoId}}">Delete</a></span>
+						</li>
+					{{/todos}}
+					<li id="last">
+						<a href="#" class="add_item" id="add_item {{id}}">Add Item</a>
+						<a href="#" class="delete_list" id="delete_list {{id}}">Delete List</a>
+						<a href="#" class="archive_items" id="archive_items {{id}}">Archive</a>
+					</li>
+				</ul>
+			</div>
+			{{/lists}}
+	  	</script>
+
+		<script type="text/javascript">
+			$(function() {
+				var template = $('#todo-template').html();
+				var info = Mustache.to_html(template, {lists: toDoLists})
+				$('#lists').html(info);
+			});
+		</script>
+
+
 	<div class="push"></div>
 	</div> <!-- end wrapper -->
 	 

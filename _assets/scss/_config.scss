@@ -1,4 +1,4 @@
-$max_width: 1100px;
+$max_width: 1600px;
 $gutter: percentage(15px / ($max_width - 40px));
 $footer_height: 200px;
 
@@ -11,12 +11,12 @@ $linkcolor: #17a;
 $grey: #efefef;
 
 // @start FONTS -------------------- //
-$font1:Museo Sans, Arial, 'Liberation Sans', FreeSans, sans-serif;
-$font2:Museo Slab, Arial, 'Liberation Sans', FreeSans, sans-serif;
+$font1:"adelle", Arial, 'Liberation Sans', FreeSans, sans-serif;
+$font2:"adelle" Arial, 'Liberation Sans', FreeSans, sans-serif;
 	
 	$basefont:18;
     $baseh1:24;
-    $baseh2:30;
+    $baseh2:24;
     $baseh3:24;
     $baseh4:22;
     $baseh5:18;
