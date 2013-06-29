@@ -17,7 +17,9 @@
 	   <!--[if lt IE 9]>
 		 <script src='_assets/js/html5shiv.js'></script>
 		<![endif]-->
+
 	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	  <script src="_assets/js/modernizr.js"></script>
 	  <script src="_assets/js/mustache.js"></script>
 	  <script src='_assets/js/plugins.js'></script>
 	  <script src='_assets/js/jquery.masonry.min.js'></script>
@@ -71,10 +73,10 @@
 				<h2 class="list_title">{{title}}</h2>
 			  	<ul class="todo_list" id="todo_list {{id}}">
 					{{#todos}}	
-						<li><p class="{{todoStatus}}">{{todo}}</p>
-							<span><a href="#" class="edit_item" id="edit_item {{todoId}}">Edit</a></span>
-							<span><a href="#" class="complete_item" id="complete_item {{todoId}}">Completed</a></span>
-							<span><a href="#" class="delete_item" id="delete_item {{todoId}}">Delete</a></span>
+						<li><p class="{{todoStatus}} toggle_status" id="complete_item {{todoId}}">{{todo}}</p>
+							<span><a class="task_toggle" href="#">&#43;</a></span>
+							<span class="tasks"><a href="#" class="edit_item" id="edit_item {{todoId}}">Edit</a>
+							<a href="#" class="delete_item" id="delete_item {{todoId}}">Delete</a></span>
 						</li>
 					{{/todos}}
 					<li id="last">

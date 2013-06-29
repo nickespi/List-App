@@ -12,18 +12,6 @@ function makeCounter() {
 }
 var id = makeCounter();
 
-// function determineStatus() {
-//     if ('complete' === 'complete') {
-//       return function (text, render) {
-//         return '<p class="completed">' + render(text) + '</p>';
-//       };
-//     } else {
-//       return function (text, render) {
-//         return '<p>' + render(text) + '</p>';
-//       };
-//     }
-// }
-
 var toDoLists =  [
   {
    title: "Books to Read",
@@ -54,9 +42,9 @@ var toDoLists =  [
 ];
 
 
-function newList() {
+function newList(e) {
+  e.preventDefault();
   console.log(toDoLists);
-  var list = document.getElementById("lists");
   var listName = prompt("What is your new list's name?");
   if (listName !== null && listName !== "") {
     var listId = listName.replace(/ /g, "_").toLowerCase();
@@ -68,7 +56,8 @@ function newList() {
   }
 }
 
-function removeList () {
+function removeList (e) {
+  e.preventDefault();
   var whichList = this.id;
   console.log(whichList);
   var areYouSure = confirm("Are you sure?");
@@ -86,7 +75,8 @@ function removeList () {
 }
 
 
-function newItem () {
+function newItem (e) {
+  e.preventDefault();
   var whichList = this.id;
   var listItem = prompt("What is your to-do?");
   for (var i = 0; i < toDoLists.length; i++) {
@@ -106,7 +96,8 @@ function newItem () {
     initElement();
 }
 
-function replaceItem () {
+function replaceItem (e) {
+  e.preventDefault();
   var whichItemId = this.id; //get id found in edit_item link
   var whichList = this.parentNode.parentNode.parentNode.id; //get id of List containing Todo to be edited
 
@@ -134,7 +125,8 @@ function replaceItem () {
   initElement();
 }
 
-function deleteItem () {
+function deleteItem (e) {
+  e.preventDefault();
   var whichItemId = this.id; //get id found in delete_item link
   var whichList = this.parentNode.parentNode.parentNode.id; //get id of List containing Todo to be deleted
 
@@ -158,10 +150,11 @@ function deleteItem () {
   initElement();
 }
 
-function crossItem () {
+function crossItem (e) {
+  e.preventDefault();
   var whichItemId = this.id; //get id found in edit_item link
-  var whichList = this.parentNode.parentNode.parentNode.id; //get id of List containing Todo to be edited
-
+  var whichList = this.parentNode.parentNode.id; //get id of List containing Todo to be edited
+  console.log(whichList);
   for (var i = 0; i < toDoLists.length; i++) {
     if ("todo_list" + " " + toDoLists[i].id === whichList) {
       var list = toDoLists[i];
@@ -186,6 +179,23 @@ function crossItem () {
   localStorage.setItem('toDoLists', JSON.stringify(toDoLists));
 
   initElement();
+}
+
+function taskToggle (e) {
+  e.preventDefault();
+  var whichItem = this.parentNode.nextSibling.nextSibling;
+  console.log(whichItem);
+  if (whichItem.style.display === 'inline') {
+    $(whichItem).slideUp({
+      duration: 300,
+      easing: 'easeInBack'
+    });
+  } else {
+    $(whichItem).slideDown({
+      duration: 300,
+      easing: 'easeOutBack'
+    });
+  }
 }
 
 function initElement () {
@@ -217,27 +227,32 @@ function initElement () {
   }
 
   var editItem = document.getElementsByClassName("edit_item");
-  for (var e = 0; e < editItem.length; e++) {
-    editItem[e].onclick = replaceItem;
+  for (var i = 0; i < editItem.length; i++) {
+    editItem[i].onclick = replaceItem;
   }
 
   var removeItem = document.getElementsByClassName("delete_item");
-  for (var a = 0; a < removeItem.length; a++) {
-    removeItem[a].onclick = deleteItem;
+  for (var i = 0; i < removeItem.length; i++) {
+    removeItem[i].onclick = deleteItem;
   }
 
-  var completeItem = document.getElementsByClassName("complete_item");
-  for (var a = 0; a < removeItem.length; a++) {
-    completeItem[a].onclick = crossItem;
+  var completeItem = document.getElementsByClassName("toggle_status");
+  for (var i = 0; i < completeItem.length; i++) {
+    completeItem[i].onclick = crossItem;
+  }
+
+  var toggle = document.getElementsByClassName("task_toggle");
+  for (var i = 0; i < toggle.length; i++ ) {
+    toggle[i].onclick = taskToggle;
   }
 
   $(function(){
     $('#lists').masonry({
       // options
       itemSelector: '.list_wrap',
-      isResizable: true
+      isResizeBound: true,
+      transitionDuration: 0
     });
   });
-
 
 }

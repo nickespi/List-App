@@ -27,8 +27,8 @@ $font2:"adelle" Arial, 'Liberation Sans', FreeSans, sans-serif;
     }
    
  // @start BREAKPOINTS -------------------- //
-$break-small: 540px;
-$break-large: 1024px;
+$break-small: 600px;
+$break-large: 1025px;
 
 @mixin breakpoint($media) {
   @if $media == handhelds {

@@ -12,7 +12,7 @@ body {
   font-weight: 300;
   line-height: 1.4;
   border-top: solid 6px #1177aa; }
-  @media only screen and (max-width: 540px) {
+  @media only screen and (max-width: 600px) {
     body {
       border-top: none; } }
 
@@ -28,17 +28,17 @@ a {
   box-sizing: border-box;
   margin: 0px auto;
   padding: 20px; }
-  @media only screen and (max-width: 540px) {
+  @media only screen and (max-width: 600px) {
     .wrapper {
       width: 100%; } }
-  @media only screen and (max-width: 540px) {
+  @media only screen and (max-width: 600px) {
     .wrapper {
       padding: 0; } }
 
 header {
   margin-bottom: 20px;
   width: 100%; }
-  @media only screen and (max-width: 540px) {
+  @media only screen and (max-width: 600px) {
     header {
       margin-top: 0px;
       margin-bottom: 0px;
@@ -55,7 +55,7 @@ header {
   padding: 10px 5px;
   color: #1177aa;
   text-align: center; }
-  @media only screen and (max-width: 540px) {
+  @media only screen and (max-width: 600px) {
     #branding {
       width: 100%; } }
 
@@ -63,10 +63,10 @@ header {
   display: block;
   width: 100%;
   height: 50px; }
-  @media only screen and (max-width: 540px) {
+  @media only screen and (max-width: 600px) {
     #nav_pri {
       display: none; } }
-  @media only screen and (max-width: 540px) {
+  @media only screen and (max-width: 600px) {
     #nav_pri {
       width: 100%; } }
   #nav_pri ul {
@@ -74,7 +74,7 @@ header {
     padding: 0;
     margin: 0;
     float: left; }
-    @media only screen and (max-width: 540px) {
+    @media only screen and (max-width: 600px) {
       #nav_pri ul {
         width: 100%;
         margin-top: 20px; } }
@@ -85,10 +85,10 @@ header {
       *display: inline;
       *vertical-align: auto;
       margin-left: 20px; }
-      @media only screen and (max-width: 540px) {
+      @media only screen and (max-width: 600px) {
         #nav_pri ul li {
           margin-left: 5px; } }
-      @media only screen and (max-width: 540px) {
+      @media only screen and (max-width: 600px) {
         #nav_pri ul li:first-child {
           margin-left: 0; } }
       #nav_pri ul li a {
@@ -107,7 +107,7 @@ header {
   margin-bottom: 20px;
   background-color: #148eca;
   width: 100%; }
-  @media only screen and (max-width: 540px) {
+  @media only screen and (max-width: 600px) {
     .mobile-header {
       display: block; } }
   .mobile-header a.navi {
@@ -160,15 +160,15 @@ header {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   float: left; }
-  @media only screen and (max-width: 540px) {
+  @media only screen and (max-width: 600px) {
     #main {
       width: 100%; } }
-  @media only screen and (min-width: 541px) and (max-width: 1023px) {
+  @media only screen and (min-width: 601px) and (max-width: 1024px) {
     #main {
       width: 100%; } }
-  @media only screen and (max-width: 540px) {
+  @media only screen and (max-width: 600px) {
     #main {
-      padding: 10px 20px 20px; } }
+      padding: 10px 0px 20px; } }
 
 #sidebar {
   width: 31.515151515152%;
@@ -178,17 +178,17 @@ header {
   float: right;
   background: #efefef;
   margin-left: 1.81818181%; }
-  @media only screen and (max-width: 540px) {
+  @media only screen and (max-width: 600px) {
     #sidebar {
       width: 100%; } }
-  @media only screen and (min-width: 541px) and (max-width: 1023px) {
+  @media only screen and (min-width: 601px) and (max-width: 1024px) {
     #sidebar {
       width: 100%; } }
-  @media only screen and (max-width: 540px) {
+  @media only screen and (max-width: 600px) {
     #sidebar {
       margin-left: 0;
       margin-top: 20px; } }
-  @media only screen and (min-width: 541px) and (max-width: 1023px) {
+  @media only screen and (min-width: 601px) and (max-width: 1024px) {
     #sidebar {
       margin-left: 0;
       margin-top: 20px; } }
@@ -311,108 +311,6 @@ caption {
   line-height: 1.4;
   padding: 0.5em 0 0.25em; }
 
-fieldset {
-  border: none;
-  padding: 0; }
-  fieldset div.submit,
-  fieldset .options ul,
-  fieldset .check {
-    margin-left: 25%; }
-    @media only screen and (max-width: 540px) {
-      fieldset div.submit,
-      fieldset .options ul,
-      fieldset .check {
-        margin-left: 0; } }
-  fieldset em {
-    margin: .5em 0 .5em 25%;
-    display: block;
-    color: #666;
-    font-size: 0.875em; }
-    @media only screen and (max-width: 540px) {
-      fieldset em {
-        margin: .5em 0 .5em 0; } }
-  fieldset abbr[title="Required"] {
-    color: #900;
-    font-weight: 400;
-    font-size: 1.25em;
-    border-bottom: none; }
-  fieldset div {
-    margin: 1em 0; }
-  fieldset .options li {
-    list-style: none; }
-
-abbr[title]:hover, dfn[title] {
-  cursor: help; }
-
-label,
-fieldset.options legend {
-  float: left;
-  width: 25%;
-  padding: 0;
-  color: inherit; }
-  @media only screen and (max-width: 540px) {
-    label,
-    fieldset.options legend {
-      width: 100%; } }
-
-label.check {
-  float: none; }
-
-input.text,
-textarea,
-select {
-  width: 75%;
-  box-sizing: border-box;
-  background-color: #eee;
-  border: solid 1px #ccc;
-  border-radius: 2px;
-  padding: .5em .35em;
-  color: #444;
-  font-weight: 100; }
-  @media only screen and (max-width: 540px) {
-    input.text,
-    textarea,
-    select {
-      width: 100%; } }
-  input.text:focus,
-  textarea:focus,
-  select:focus {
-    outline: none;
-    background-color: #e2e2e2; }
-
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
-input.search {
-  float: left;
-  box-sizing: border-box;
-  margin: 0 2% 0 0;
-  -webkit-appearance: none;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: #1177aa;
-  color: #fff;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  padding: .25em .5em; }
-  button:hover, button:focus,
-  input[type="button"]:hover,
-  input[type="button"]:focus,
-  input[type="reset"]:hover,
-  input[type="reset"]:focus,
-  input[type="submit"]:hover,
-  input[type="submit"]:focus,
-  input.search:hover,
-  input.search:focus {
-    background-color: #148eca; }
-
-input.search {
-  width: 23%; }
-  @media only screen and (max-width: 540px) {
-    input.search {
-      margin-top: 5px; } }
-
 /**** Navigation ****/
 .horizontal {
   list-style: none; }
@@ -433,17 +331,17 @@ input.search {
   #featured li {
     width: 16.02564%;
     margin-right: 0.96154%; }
-    @media only screen and (min-width: 541px) and (max-width: 1023px) {
+    @media only screen and (min-width: 601px) and (max-width: 1024px) {
       #featured li {
         width: 47.96748%; } }
-    @media only screen and (max-width: 540px) {
+    @media only screen and (max-width: 600px) {
       #featured li {
         width: 100%;
         margin-right: 0; } }
-    @media only screen and (min-width: 541px) and (max-width: 1023px) {
+    @media only screen and (min-width: 601px) and (max-width: 1024px) {
       #featured li {
         margin-bottom: 0.96154%; } }
-    @media only screen and (max-width: 540px) {
+    @media only screen and (max-width: 600px) {
       #featured li {
         margin-bottom: 0.96154%; } }
     #featured li:last-child {
@@ -476,17 +374,18 @@ input.search {
 
 .list_wrap {
   float: left;
-  width: 240px;
+  width: 19%;
   margin-left: 0.96154%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
-  @media only screen and (max-width: 540px) {
+  @media only screen and (min-width: 601px) and (max-width: 1024px) {
     .list_wrap {
-      width: 100%; } }
-  @media only screen and (min-width: 541px) and (max-width: 1023px) {
+      width: 32%; } }
+  @media only screen and (max-width: 600px) {
     .list_wrap {
-      width: 230px; } }
+      width: 100%;
+      margin-left: 0; } }
   .list_wrap h2 {
     margin-bottom: 0;
     margin-top: 0;
@@ -502,14 +401,21 @@ input.search {
       position: relative;
       background-color: #ebf7fd;
       border-bottom: 1px solid #ddf1fc; }
+      @media only screen and (max-width: 600px) {
+        .list_wrap ul.todo_list li {
+          padding-right: 50px; } }
       .list_wrap ul.todo_list li p {
-        margin-bottom: 0; }
+        margin-bottom: 0;
+        cursor: pointer; }
         .list_wrap ul.todo_list li p.completed {
           opacity: .7;
           text-decoration: line-through; }
       .list_wrap ul.todo_list li:hover, .list_wrap ul.todo_list li:focus {
         z-index: 2;
         background-color: #ddf1fc; }
+        @media only screen and (max-width: 600px) {
+          .list_wrap ul.todo_list li:hover, .list_wrap ul.todo_list li:focus {
+            background-color: #ebf7fd; } }
       .list_wrap ul.todo_list li:last-child {
         background-color: #fff;
         background-image: -webkit-linear-gradient(top, #f4fbfe, white);
@@ -527,17 +433,24 @@ input.search {
         display: none;
         position: absolute;
         bottom: 0px; }
-        @media only screen and (max-width: 540px) {
+        @media only screen and (max-width: 600px) {
           .list_wrap ul.todo_list li .edit_item,
           .list_wrap ul.todo_list li .delete_item,
           .list_wrap ul.todo_list li .complete_item {
-            display: inline; } }
+            display: inline;
+            top: 38%; } }
       .list_wrap ul.todo_list li .edit_item {
         left: 10px; }
+        @media only screen and (max-width: 600px) {
+          .list_wrap ul.todo_list li .edit_item {
+            left: 40px;
+            font-size: 1em; } }
       .list_wrap ul.todo_list li .delete_item {
         left: 40px; }
-      .list_wrap ul.todo_list li .complete_item {
-        left: 85px; }
+        @media only screen and (max-width: 600px) {
+          .list_wrap ul.todo_list li .delete_item {
+            left: 90px;
+            font-size: 1em; } }
       .list_wrap ul.todo_list li .add_item,
       .list_wrap ul.todo_list li .delete_list,
       .list_wrap ul.todo_list li .archive_items {
@@ -549,6 +462,54 @@ input.search {
         display: inline; }
       .list_wrap ul.todo_list li:hover .edit_item, .list_wrap ul.todo_list li:hover .delete_item, .list_wrap ul.todo_list li:hover .complete_item {
         display: inline; }
+      @media only screen and (max-width: 600px) {
+        .list_wrap ul.todo_list li span.tasks {
+          display: none;
+          height: 100%;
+          width: 100%;
+          background-color: #ddf1fc;
+          position: absolute;
+          top: 0;
+          left: 0; } }
+      .list_wrap ul.todo_list li a.task_toggle {
+        display: none;
+        font-size: 2em;
+        color: #c1e6f9; }
+        @media only screen and (max-width: 600px) {
+          .list_wrap ul.todo_list li a.task_toggle {
+            display: inline;
+            position: absolute;
+            top: 16%;
+            right: 20px;
+            z-index: 4; } }
+        .list_wrap ul.todo_list li a.task_toggle:hover, .list_wrap ul.todo_list li a.task_toggle:focus {
+          color: #93d4f4; }
+
+.touch .list_wrap ul.todo_list li {
+  padding-right: 50px; }
+  .touch .list_wrap ul.todo_list li .edit_item,
+  .touch .list_wrap ul.todo_list li .delete_item {
+    display: inline;
+    top: 38%;
+    font-size: 1em; }
+  .touch .list_wrap ul.todo_list li .edit_item {
+    left: 20px; }
+  .touch .list_wrap ul.todo_list li .delete_item {
+    left: 68px; }
+  .touch .list_wrap ul.todo_list li span.tasks {
+    display: none;
+    height: 100%;
+    width: 100%;
+    background-color: #ddf1fc;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .touch .list_wrap ul.todo_list li a.task_toggle {
+    display: inline;
+    position: absolute;
+    top: 16%;
+    right: 20px;
+    z-index: 4; }
 
 #addList {
   float: right;
@@ -556,7 +517,7 @@ input.search {
   padding: 11px 15px 11px 60px;
   margin: 0px 20px 20px;
   position: relative; }
-  @media only screen and (max-width: 540px) {
+  @media only screen and (max-width: 600px) {
     #addList {
       margin-bottom: 0px;
       float: left; } }

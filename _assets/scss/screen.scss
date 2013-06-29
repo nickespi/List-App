@@ -179,7 +179,7 @@ header {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	@include breakpoint(handhelds) { padding: 10px 20px 20px;}
+	@include breakpoint(handhelds) { padding: 10px 0px 20px;}
 	float: left;
 }
 
@@ -341,101 +341,101 @@ caption {
 	line-height: 1.4;
 	padding: 0.5em 0 0.25em;
 }
-fieldset {
-	border: none;
-	padding: 0;
+// fieldset {
+// 	border: none;
+// 	padding: 0;
 	
-	div.submit, 
-	.options ul, 
-	.check {
-		margin-left: 25%;
-		@include breakpoint(handhelds) {margin-left: 0;}
-	}
+// 	div.submit, 
+// 	.options ul, 
+// 	.check {
+// 		margin-left: 25%;
+// 		@include breakpoint(handhelds) {margin-left: 0;}
+// 	}
 
-	em {
-	margin: .5em 0 .5em 25%;
-	@include breakpoint(handhelds) { margin: .5em 0 .5em 0;}
-	display: block;
-	color: #666;
-	font-size: 0.875em;
-	}
+// 	em {
+// 	margin: .5em 0 .5em 25%;
+// 	@include breakpoint(handhelds) { margin: .5em 0 .5em 0;}
+// 	display: block;
+// 	color: #666;
+// 	font-size: 0.875em;
+// 	}
 
-	abbr[title="Required"] {
-	color: #900;
-	font-weight: 400;
-	font-size: 1.25em;
-	border-bottom: none;
-	}
+// 	abbr[title="Required"] {
+// 	color: #900;
+// 	font-weight: 400;
+// 	font-size: 1.25em;
+// 	border-bottom: none;
+// 	}
 
-	div {
-	margin: 1em 0;
-	}
+// 	div {
+// 	margin: 1em 0;
+// 	}
 	
-	.options li {
-	list-style: none;
-	}
-}
+// 	.options li {
+// 	list-style: none;
+// 	}
+// }
 
-abbr[title]:hover, dfn[title] {
-	cursor: help;
-}
-label,
-fieldset.options legend {
-	float: left;
-	width: 25%;
-	@include breakpoint(handhelds) { width: 100% ;}
-	padding: 0;
-	color: inherit;
-}
+// abbr[title]:hover, dfn[title] {
+// 	cursor: help;
+// }
+// label,
+// fieldset.options legend {
+// 	float: left;
+// 	width: 25%;
+// 	@include breakpoint(handhelds) { width: 100% ;}
+// 	padding: 0;
+// 	color: inherit;
+// }
 
-label.check {
-	float: none;
-}
+// label.check {
+// 	float: none;
+// }
 
-input.text,
-textarea,
-select {
-	width: 75%;
-	@include breakpoint(handhelds) { width: 100% ;}
-	box-sizing: border-box;
-	background-color: #eee;
-	border: solid 1px #ccc;
-	border-radius: 2px;
-	padding: .5em .35em;
-	color: #444;
-	font-weight: 100;
+// input.text,
+// textarea,
+// select {
+// 	width: 75%;
+// 	@include breakpoint(handhelds) { width: 100% ;}
+// 	box-sizing: border-box;
+// 	background-color: #eee;
+// 	border: solid 1px #ccc;
+// 	border-radius: 2px;
+// 	padding: .5em .35em;
+// 	color: #444;
+// 	font-weight: 100;
 
-	&:focus {
-	outline: none;
-	background-color: #e2e2e2;
-	}
-}
+// 	&:focus {
+// 	outline: none;
+// 	background-color: #e2e2e2;
+// 	}
+// }
 
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
-input.search {
-	float: left;
-	box-sizing: border-box;
-	margin: 0 2% 0 0;
-	-webkit-appearance: none;
-	border: 1px solid $bordercolor;
-	background-color: $maincolor;
-	color: #fff;
-	@include border-radius(2px);
-	padding: .25em .5em;
+// button,
+// input[type="button"],
+// input[type="reset"],
+// input[type="submit"],
+// input.search {
+// 	float: left;
+// 	box-sizing: border-box;
+// 	margin: 0 2% 0 0;
+// 	-webkit-appearance: none;
+// 	border: 1px solid $bordercolor;
+// 	background-color: $maincolor;
+// 	color: #fff;
+// 	@include border-radius(2px);
+// 	padding: .25em .5em;
 
-	&:hover,
-	&:focus {
-		background-color: $hoverlight;
-	}
-}
+// 	&:hover,
+// 	&:focus {
+// 		background-color: $hoverlight;
+// 	}
+// }
 
-input.search {
-	width: 23%;
-	@include breakpoint(handhelds) { margin-top: 5px; }
-}
+// input.search {
+// 	width: 23%;
+// 	@include breakpoint(handhelds) { margin-top: 5px; }
+// }
 /**** Navigation ****/
 .horizontal {
         list-style:none;
@@ -517,9 +517,9 @@ input.search {
 
 .list_wrap {
 	float: left;
-	width: 240px;
-	@include breakpoint(handhelds) { width: 100%; }
-	@include breakpoint(medium-screens) { width: 230px; }
+	width: 19%;
+	@include breakpoint(medium-screens) { width: 32%;}
+	@include breakpoint(handhelds) { width: 100%; margin-left: 0; }
 	margin-left: $gutter;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -542,6 +542,7 @@ input.search {
 		li {
 			margin-left: 0;
 			padding: 10px 10px 20px 10px;
+			@include breakpoint(handhelds) { padding-right: 50px; }
 			position: relative;
 			background-color: lighten($maincolor, 59%);
 			border-bottom: 1px solid lighten($maincolor, 56%);
@@ -551,6 +552,7 @@ input.search {
 
 			p {
 				margin-bottom: 0;
+				cursor: pointer;
 
 				&.completed {
 					opacity: .7;
@@ -562,6 +564,7 @@ input.search {
 			&:focus {
 				z-index: 2;
 				background-color: lighten($maincolor, 56%);
+				@include breakpoint(handhelds) {background-color: lighten($maincolor, 59%);}
 			}
 
 			&:last-child {
@@ -583,22 +586,21 @@ input.search {
 			.delete_item,
 			.complete_item {
 				display: none;
-				@include breakpoint(handhelds) { display: inline; }
+				@include breakpoint(handhelds) { display: inline; top: 38%; }
 				position: absolute;
 				bottom: 0px;
 			}
 			
 			.edit_item {
 				left: 10px;
+				@include breakpoint(handhelds) { left: 40px; font-size: 1em; }
 			}
 
 			.delete_item {
 				left: 40px;
+				@include breakpoint(handhelds) { left: 90px; font-size: 1em; }
 			}
 			
-			.complete_item {
-				left: 85px;
-			}
 
 			.add_item,
 			.delete_list,
@@ -620,11 +622,77 @@ input.search {
 			&:hover .complete_item {
 				display: inline;
 			}
+
+			span.tasks {
+					@include breakpoint(handhelds) { 
+					display: none;
+					height: 100%;
+					width: 100%;
+					background-color: lighten($maincolor, 56%);
+					position: absolute;
+					top: 0;
+					left: 0;}
+				}
+
+			a.task_toggle {
+				display: none;
+				font-size: 2em;
+				color: lighten($maincolor, 50%);
+				@include breakpoint(handhelds) { display: inline; position: absolute; top: 16%; right: 20px; z-index: 4; }
+			
+				&:hover,
+				&:focus {
+					color: lighten($maincolor, 40%);
+				}
+			}
+
 		}
 	}
 
 }
+.touch {
+	.list_wrap {
+		ul.todo_list {
+			li {
 
+				padding-right: 50px;
+				
+				.edit_item,
+				.delete_item {
+					display: inline;
+					top: 38%;
+					font-size: 1em;
+				}
+
+				.edit_item {
+					left: 20px;
+				}
+
+				.delete_item {
+					left: 68px;
+				}
+
+				span.tasks {
+					display: none;
+					height: 100%;
+					width: 100%;
+					background-color: lighten($maincolor, 56%);
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+
+				a.task_toggle {
+					display: inline;
+					position: absolute;;
+					top: 16%;
+					right: 20px;
+					z-index: 4;
+				}
+			}
+		}
+	}
+}
 #addList {
 		float: right;
 		font-size: 1.1em;
@@ -640,7 +708,7 @@ input.search {
 			line-height: 1em;
 			font-size: 1.2em;
 			border-radius: 50%;
-			background-color: lighten($maincolor, 55%);;
+			background-color: lighten($maincolor, 55%);
 		}
 	}
 		#new-item {
