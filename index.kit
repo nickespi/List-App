@@ -1,5 +1,6 @@
 <!-- $projectName = List App -->
-<!-- $pageTitle = Home Page -->
+<!-- $pageTitle = Home -->
+<!-- $pageClass = home -->
 
 
 <!-- @import "_includes/_header.kit" -->
@@ -15,7 +16,7 @@
 		  	{{#lists}}
 		  	<div class="list_wrap" id="list_wrap">
 				<h2 class="list_title">{{title}}</h2>
-			  	<ul class="todo_list" id="todo_list {{id}}">
+			  	<ul class="todo_list {{state}}" id="todo_list {{id}}">
 					{{#todos}}	
 						<li><p class="{{todoStatus}} toggle_status" id="complete_item {{todoId}}">{{todo}}</p>
 							<span><a class="task_toggle" href="#">&#43;</a></span>
@@ -33,13 +34,7 @@
 			{{/lists}}
 	  	</script>
 
-		<script type="text/javascript">
-			$(function() {
-				var template = $('#todo-template').html();
-				var info = Mustache.to_html(template, {lists: toDoLists})
-				$('#lists').html(info);
-			});
-		</script>
+		
 
 
 <!-- @import "_includes/_footer.kit" -->

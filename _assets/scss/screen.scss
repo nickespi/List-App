@@ -11,6 +11,7 @@ body {
 }
 
 body {
+	box-sizing: border-box;
 	color: #444;
 	@include noisyBG;
 	font-weight: 300;
@@ -21,6 +22,7 @@ body {
 
 a {
 	color: $linkcolor;
+	outline: none;
 
 	&:hover,
 	&:focus {
@@ -42,6 +44,20 @@ header {
 	margin-bottom: 20px;
 	width: 100%;
 	@include breakpoint(handhelds) { margin-top: 0px; margin-bottom: 0px; float: left;}
+
+	.not_supported {
+		display: none;
+	}
+}
+.no-localstorage .not_supported,
+.ie6 .not_supported,
+.ie7 .not_supported,
+.ie8 .not_supported {
+		float: left;
+		width: 100%;
+		margin-bottom: 20px;
+		text-align: center;
+		color: #CA5555;	
 }
 
 #branding {
@@ -51,7 +67,7 @@ header {
 	box-sizing: border-box;
 	background-color: $grey;
 	width: 150px;
-	@include breakpoint(handhelds) { width: 100% ;}
+	@include breakpoint(handhelds) { display: none;}
 	margin: 0;
 	padding: 10px 5px;
 	color: $maincolor;
@@ -104,17 +120,30 @@ header {
 	display: none;
 	@include breakpoint(handhelds) { display: block;}
 	float: left;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	background-color: $hoverlight;
 	width: 100%;
+	position: relative;
 
 	a.navi {
 		border-bottom: none;
 		display: block;
-		background-color: $maincolor;
-		color: #fff;
-		padding: 15px;
+		text-align: center;
+		background-color: $grey;
+		color: $maincolor;
+		font-size: 1.3333em;
+		font-weight: bold;
+		padding: 10px 15px;
 		height: 100%;
+		position: relative;
+
+		span {
+			font-family: "Entypo";
+			position: absolute;
+			right: 10px;
+			top: -16px;
+			font-size: 2.65em;
+		}
 	}
 
 	.navi_vert {
@@ -213,8 +242,27 @@ header {
 footer {
 	background-color: $maincolor;
 	@include noisyBG;
-}
+	
+	.footer_wrapper {
+		text-align: center;
+		padding-top: 13px;
+	}
 
+	small {
+		color: #fff;
+
+		a {
+			color: #fff;
+			text-decoration: none;
+
+			&:hover,
+			&:focus {
+				color: #fff;
+				text-decoration: underline;
+			}
+		}
+	}
+}
 p, 
 pre, 
 blockquote, 
@@ -230,6 +278,7 @@ fieldset {
 
 h1 {
 	font-size: calc-em($baseh1);
+	color: $maincolor;
 }
 
 h2 {
@@ -451,69 +500,69 @@ caption {
         }
     }
 
-#featured {
-	clear: both;
+// #featured {
+// 	clear: both;
 
-		li {
-			width: percentage(250px / ($max_width - 40px));
-			@include breakpoint(medium-screens) { width: percentage(472px / 984px);}
-			@include breakpoint(handhelds) { width: 100%; margin-right: 0;}
-			margin-right: $gutter;
-			@include breakpoint(medium-screens) { margin-bottom: $gutter;}
-			@include breakpoint(handhelds) { margin-bottom: $gutter;}
+// 		li {
+// 			width: percentage(250px / ($max_width - 40px));
+// 			@include breakpoint(medium-screens) { width: percentage(472px / 984px);}
+// 			@include breakpoint(handhelds) { width: 100%; margin-right: 0;}
+// 			margin-right: $gutter;
+// 			@include breakpoint(medium-screens) { margin-bottom: $gutter;}
+// 			@include breakpoint(handhelds) { margin-bottom: $gutter;}
 			
-			&:last-child{
-					margin-right: 0;
-				}
+// 			&:last-child{
+// 					margin-right: 0;
+// 				}
 
-			a {
-				background-color: #efefef;
-				padding: 75px 0px;
-				text-align: center;
-			}
-		}
-}
+// 			a {
+// 				background-color: #efefef;
+// 				padding: 75px 0px;
+// 				text-align: center;
+// 			}
+// 		}
+// }
 
-.pagination {
-	li {
+// .pagination {
+// 	li {
 		
-		a {
-			border: 1px solid $bordercolor;
-			line-height: 1;
-			padding: 10px 15px;
-			background-color: #fff;
-			border-radius: 5px;
+// 		a {
+// 			border: 1px solid $bordercolor;
+// 			line-height: 1;
+// 			padding: 10px 15px;
+// 			background-color: #fff;
+// 			border-radius: 5px;
 
-			&.current_page {
-				background-color: $maincolor;
-				@include noisyBG;
-				color: #FFF;
+// 			&.current_page {
+// 				background-color: $maincolor;
+// 				@include noisyBG;
+// 				color: #FFF;
 
-				&:hover,
-				&:focus {
-					background-color: $maincolor;
-				}
-			}
+// 				&:hover,
+// 				&:focus {
+// 					background-color: $maincolor;
+// 				}
+// 			}
 
-			&:hover,
-			&:focus {
-				background-color: darken(#fff, 3%);
-			}
-		}			
+// 			&:hover,
+// 			&:focus {
+// 				background-color: darken(#fff, 3%);
+// 			}
+// 		}			
 
-		&:last-child a,
-		&:first-child a {
-			border: none;
-			background-color: inherit;
-			text-decoration: underline;
+// 		&:last-child a,
+// 		&:first-child a {
+// 			border: none;
+// 			background-color: inherit;
+// 			text-decoration: underline;
 
-			&:hover,
-			&:focus {
-				text-decoration: none;
-			}
-		}
-	}
-}
+// 			&:hover,
+// 			&:focus {
+// 				text-decoration: none;
+// 			}
+// 		}
+// 	}
+// }
 
 .list_wrap {
 	float: left;
@@ -526,17 +575,22 @@ caption {
 	box-sizing: border-box;
 	
 	h2 {
-		margin-bottom: 0;
+		margin-bottom: 0.5em;
 		margin-top: 0;
 		padding: 3px 0;
 		text-align: center;
-		background-color: $hoverlight;
+		background-color: lighten($maincolor, 5%);
 		color: #fff;
+		cursor: pointer;
+	}
+
+	ul.closed {
+			display: none;
 	}
 
 	ul.todo_list {
 		list-style-type: none;
-		
+		margin-top: 0;
  			
 
 		li {
@@ -693,35 +747,48 @@ caption {
 		}
 	}
 }
+
 #addList {
-		float: right;
-		font-size: 1.1em;
-		padding: 11px 15px 11px 60px;
-		margin: 0px 20px 20px;
-		position: relative;
-		@include breakpoint(handhelds) { margin-bottom: 0px; float: left; }
+	float: right;
+	font-size: 1.1em;
+	padding: 11px 15px 11px 60px;
+	margin: 0px 20px 20px;
+	position: relative;
+	@include breakpoint(handhelds) { margin-bottom: 0px; float: left; }
 
-		span {
-			position: absolute;
-			left: 0;
-			padding: 11px 15px;
-			line-height: 1em;
-			font-size: 1.2em;
-			border-radius: 50%;
-			background-color: lighten($maincolor, 55%);
-		}
+	span {
+		position: absolute;
+		left: 0;
+		padding: 11px 15px;
+		line-height: 1em;
+		font-size: 1.2em;
+		border-radius: 50%;
+		background-color: lighten($maincolor, 55%);
 	}
-		#new-item {
-			 max-height: 0;
-  			opacity: 0;
- 			 -webkit-transform: scale(0);
- 			 -webkit-animation: growHeight 0.2s ease forwards;
-			}
-			@-webkit-keyframes growHeight {
+}
 
-			  to { 
-			    max-height: 350px;
-			    opacity: 1;
-			    -webkit-transform: scale(1);
-			  }
-			}
+.purpose_page #addList {
+	display: none;
+}
+
+#new-item {
+	 max-height: 0;
+		opacity: 0;
+		 -webkit-transform: scale(0);
+		 -webkit-animation: growHeight 0.2s ease forwards;
+	}
+	@-webkit-keyframes growHeight {
+
+	  to { 
+	    max-height: 350px;
+	    opacity: 1;
+	    -webkit-transform: scale(1);
+	  }
+	}
+
+.purpose {
+	width: 85%;
+	@include breakpoint(handhelds) { width: 90%; }
+	@include breakpoint(medium-screens) { width: 85%; }
+	margin: 20px auto 0;
+}

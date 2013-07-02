@@ -1,7 +1,11 @@
 
 
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7 ]> <html class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html> <!--<![endif]-->
 
 	<head>
 
@@ -14,15 +18,10 @@
 	  <link rel='stylesheet' href='_assets/css/screen.css'>
 	  
 	  <!--JS-->
-	   <!--[if lt IE 9]>
-		 <script src='_assets/js/html5shiv.js'></script>
-		<![endif]-->
-
 	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	  <script src="_assets/js/modernizr.js"></script>
 	  <script src="_assets/js/mustache.js"></script>
 	  <script src='_assets/js/plugins.js'></script>
-	  <script src='_assets/js/jquery.masonry.min.js'></script>
 	  <script src='_assets/js/app.js'></script>
 	  <script src='_assets/js/jquery.navi.js'></script>
 	  
@@ -38,15 +37,15 @@
 	  
 	</head>
 
-	<body onload="initElement()">
+	<body onload="initElement()" class="style_guide">
 
 	<div class="wrapper">
 	  
 	 <header>
-
+	 	<div class="not_supported"><p>Your Browser is not supported by List App. Please update to a new version of Chrome, Safari or Firefox.</p></div>
 	 	<div class="mobile-header">
 	 		<nav class="navi_vert"></nav>
-    		<a class="navi" href="#">Menu</a>
+    		<a class="navi" href="#">List App<span>&#9776</span></a>
 		</div>
 
 	  	<h1 id="branding">New Project</h1>
@@ -371,7 +370,7 @@
 	 
 	 <footer>
 		<div class="footer_wrapper">
-		
+			<small>List App | Built by <a href="http://nickespinosa.com">Nick Espinosa</a></small>
 		</div>
 	 </footer>
 

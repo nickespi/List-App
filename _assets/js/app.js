@@ -2,7 +2,6 @@ function makeCounter() {
     var i = 0;
     var retrievedCount = localStorage.getItem('count');
     i = retrievedCount;
-    console.log(i);
     return function() {
         i++;
         console.log(i);
@@ -16,6 +15,7 @@ var toDoLists =  [
   {
    title: "Books to Read",
    id: "books_to_read",
+   state: "open",
    todos: [
       {
         todoId: id(),
@@ -43,21 +43,28 @@ var toDoLists =  [
 
 
 function newList(e) {
-  e.preventDefault();
+  if (e.preventDefault) {
+    e.preventDefault();
+  }
   console.log(toDoLists);
   var listName = prompt("What is your new list's name?");
   if (listName !== null && listName !== "") {
     var listId = listName.replace(/ /g, "_").toLowerCase();
-     toDoLists.push({"title": listName, "id": listId, "todos":[]});
-
+     toDoLists.push({"title": listName, "id": listId, "state": "open", "todos":[]});
+     if (toDoLists.length < 2) {
+        window.location.reload(true);
+      }
+  }
+  
     localStorage.setItem('toDoLists', JSON.stringify(toDoLists));
 
     initElement();
-  }
 }
 
 function removeList (e) {
-  e.preventDefault();
+  if (e.preventDefault) {
+    e.preventDefault();
+  }
   var whichList = this.id;
   console.log(whichList);
   var areYouSure = confirm("Are you sure?");
@@ -76,7 +83,9 @@ function removeList (e) {
 
 
 function newItem (e) {
-  e.preventDefault();
+  if (e.preventDefault) {
+    e.preventDefault();
+  }
   var whichList = this.id;
   var listItem = prompt("What is your to-do?");
   for (var i = 0; i < toDoLists.length; i++) {
@@ -87,6 +96,7 @@ function newItem (e) {
         newToDo.todoId = id();
         newToDo.todoStatus = 'active';
         toDoLists[i].todos.push(newToDo);
+        console.log("Created todo " + newToDo.todo + " with ID " + newToDo.todoId);
       }
     }
   }
@@ -97,7 +107,9 @@ function newItem (e) {
 }
 
 function replaceItem (e) {
-  e.preventDefault();
+  if (e.preventDefault) {
+    e.preventDefault();
+  }
   var whichItemId = this.id; //get id found in edit_item link
   var whichList = this.parentNode.parentNode.parentNode.id; //get id of List containing Todo to be edited
 
@@ -125,8 +137,10 @@ function replaceItem (e) {
   initElement();
 }
 
-function deleteItem (e) {
-  e.preventDefault();
+function removeItem (e) {
+  if (e.preventDefault) {
+    e.preventDefault();
+  }
   var whichItemId = this.id; //get id found in delete_item link
   var whichList = this.parentNode.parentNode.parentNode.id; //get id of List containing Todo to be deleted
 
@@ -150,18 +164,18 @@ function deleteItem (e) {
   initElement();
 }
 
-function crossItem (e) {
-  e.preventDefault();
+function completeItem (e) {
+  if (e.preventDefault) {
+    e.preventDefault();
+  }
   var whichItemId = this.id; //get id found in edit_item link
   var whichList = this.parentNode.parentNode.id; //get id of List containing Todo to be edited
-  console.log(whichList);
   for (var i = 0; i < toDoLists.length; i++) {
     if ("todo_list" + " " + toDoLists[i].id === whichList) {
       var list = toDoLists[i];
 
       for (var e = 0; e < list.todos.length; e++) {
         var theOne = list.todos[e];
-        console.log(theOne.todoId);
         if ("complete_item" + " " + theOne.todoId === whichItemId) {
           if (theOne.todoStatus === 'active'){
             theOne.todoStatus = 'completed';
@@ -182,9 +196,12 @@ function crossItem (e) {
 }
 
 function taskToggle (e) {
-  e.preventDefault();
+  if (e.preventDefault) {
+    e.preventDefault();
+  }
   var whichItem = this.parentNode.nextSibling.nextSibling;
   console.log(whichItem);
+
   if (whichItem.style.display === 'inline') {
     $(whichItem).slideUp({
       duration: 300,
@@ -196,6 +213,30 @@ function taskToggle (e) {
       easing: 'easeOutBack'
     });
   }
+}
+
+function listToggle (e) {
+  if (e.preventDefault) {
+    e.preventDefault();
+  }
+  var whichItem = this.nextSibling.nextSibling;
+  var whichItemId = whichItem.id;
+  console.log(whichItem);
+
+  for (var i = 0; i < toDoLists.length; i++) {
+    var theOne = toDoLists[i];
+    if ("todo_list " + theOne.id === whichItemId ) {
+      if (theOne.state === 'open') {
+          theOne.state = 'closed';
+      } else {
+          theOne.state = 'open';
+      }
+    }
+  }
+    
+    localStorage.setItem('toDoLists', JSON.stringify(toDoLists));
+
+    initElement();
 }
 
 function initElement () {
@@ -231,19 +272,24 @@ function initElement () {
     editItem[i].onclick = replaceItem;
   }
 
-  var removeItem = document.getElementsByClassName("delete_item");
-  for (var i = 0; i < removeItem.length; i++) {
-    removeItem[i].onclick = deleteItem;
+  var deleteItem = document.getElementsByClassName("delete_item");
+  for (var i = 0; i < deleteItem.length; i++) {
+    deleteItem[i].onclick = removeItem;
   }
 
-  var completeItem = document.getElementsByClassName("toggle_status");
-  for (var i = 0; i < completeItem.length; i++) {
-    completeItem[i].onclick = crossItem;
+  var toggleStatus = document.getElementsByClassName("toggle_status");
+  for (var i = 0; i < toggleStatus.length; i++) {
+    toggleStatus[i].onclick = completeItem;
   }
 
   var toggle = document.getElementsByClassName("task_toggle");
   for (var i = 0; i < toggle.length; i++ ) {
     toggle[i].onclick = taskToggle;
+  }
+
+  var hideList = document.getElementsByClassName("list_title");
+  for (var i = 0; i < hideList.length; i++) {
+    hideList[i].onclick = listToggle;
   }
 
   $(function(){

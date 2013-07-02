@@ -33,11 +33,11 @@
 	  <script type="text/javascript" src="//use.typekit.net/yrx5fia.js"></script>
 	  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	  
-	  <title>List App | Home</title>
+	  <title>List App | Purpose</title>
 	  
 	</head>
 
-	<body onload="initElement()" class="home">
+	<body onload="initElement()" class="purpose_page">
 
 	<div class="wrapper">
 	  
@@ -61,34 +61,13 @@
 
 	<section role="main">
 		<div id="main">
-			<div id="lists"></div>
+			<div class="purpose">
+				<h3>I built List App to learn more about the intricacies of Javascript.</h3> 
+				<p>I've been working with jQuery for several years but wanted to build something from scratch with little dependency on a framework. I did, however, use <a href="http://mustache.github.io/">mustache.js</a> for templating out the Lists and <a href="http://jquery.com">jQuery</a> for the animations on touch devices.</p>
+			</div>
 		</div>
 	 </section>
-	 
-	 
-	  	<script id="todo-template" type="text/template">
-		  	{{#lists}}
-		  	<div class="list_wrap" id="list_wrap">
-				<h2 class="list_title">{{title}}</h2>
-			  	<ul class="todo_list {{state}}" id="todo_list {{id}}">
-					{{#todos}}	
-						<li><p class="{{todoStatus}} toggle_status" id="complete_item {{todoId}}">{{todo}}</p>
-							<span><a class="task_toggle" href="#">&#43;</a></span>
-							<span class="tasks"><a href="#" class="edit_item" id="edit_item {{todoId}}">Edit</a>
-							<a href="#" class="delete_item" id="delete_item {{todoId}}">Delete</a></span>
-						</li>
-					{{/todos}}
-					<li id="last">
-						<a href="#" class="add_item" id="add_item {{id}}">Add Item</a>
-						<a href="#" class="delete_list" id="delete_list {{id}}">Delete List</a>
-						<a href="#" class="archive_items" id="archive_items {{id}}">Archive</a>
-					</li>
-				</ul>
-			</div>
-			{{/lists}}
-	  	</script>
-
-		
+	
 
 
 	<div class="push"></div>
