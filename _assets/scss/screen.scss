@@ -621,7 +621,7 @@ caption {
 				@include breakpoint(handhelds) {background-color: lighten($maincolor, 59%);}
 			}
 
-			&:last-child {
+			&.last {
 				background-color: #fff;
 				background-image: -webkit-linear-gradient(top, lighten($maincolor, 61%), #fff);
 				border-bottom: none;
@@ -632,20 +632,24 @@ caption {
 			.delete_item,
 			.delete_list,
 			.complete_item,
-			.archive_items {
+			.archive_item,
+			.promote_item {
 				font-size: .8em;
 			}
 
 			.edit_item,
 			.delete_item,
-			.complete_item {
+			.complete_item,
+			.archive_item,
+			.promote_item {
 				display: none;
 				@include breakpoint(handhelds) { display: inline; top: 38%; }
 				position: absolute;
 				bottom: 0px;
 			}
 			
-			.edit_item {
+			.edit_item,
+			.promote_item {
 				left: 10px;
 				@include breakpoint(handhelds) { left: 40px; font-size: 1em; }
 			}
@@ -655,25 +659,25 @@ caption {
 				@include breakpoint(handhelds) { left: 90px; font-size: 1em; }
 			}
 			
+			.archive_item {
+				left: 85px;
+				@include breakpoint(handhelds) { left: 158px; font-size: 1em; }
+			}
 
 			.add_item,
-			.delete_list,
-			.archive_items {
+			.delete_list {
 				border-bottom: 1px solid transparentize($linkcolor, 0.8);
 				margin-right: 3px;
 			}
 
-			.archive_items {
-				display: none;
-			}
-
-			.archive_items_active {
-				display: inline;
+			.archive_item {
 			}
 
 			&:hover .edit_item,
 			&:hover .delete_item,
-			&:hover .complete_item {
+			&:hover .complete_item,
+			&:hover .archive_item,
+			&:hover .promote_item {
 				display: inline;
 			}
 
@@ -712,7 +716,8 @@ caption {
 				padding-right: 50px;
 				
 				.edit_item,
-				.delete_item {
+				.delete_item,
+				.archive_item {
 					display: inline;
 					top: 38%;
 					font-size: 1em;
@@ -724,6 +729,9 @@ caption {
 
 				.delete_item {
 					left: 68px;
+				}
+				.archive_item {
+					left: 133px;
 				}
 
 				span.tasks {
@@ -747,6 +755,35 @@ caption {
 		}
 	}
 }
+#archived {
+	margin-top: 20px;
+}
+
+ul.archive_titles {
+	margin-bottom: 40px;
+
+	li {
+		list-style-type: none;
+		display: inline-block;
+		margin-left: $gutter;
+		margin-bottom: 10px;
+
+		a {
+			padding: 3px 10px;
+			text-align: center;
+			background-color: lighten($maincolor, 5%);
+			color: #fff;
+			cursor: pointer;
+		}
+	}
+}
+
+.archive_list_title {
+	color: $maincolor;
+	font-size: .8em;
+	margin-top: 0;
+}
+
 
 #addList {
 	float: right;
@@ -767,7 +804,8 @@ caption {
 	}
 }
 
-.purpose_page #addList {
+.purpose_page #addList,
+.archive #addList {
 	display: none;
 }
 

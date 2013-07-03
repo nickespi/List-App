@@ -21,13 +21,14 @@
 						<li><p class="{{todoStatus}} toggle_status" id="complete_item {{todoId}}">{{todo}}</p>
 							<span><a class="task_toggle" href="#">&#43;</a></span>
 							<span class="tasks"><a href="#" class="edit_item" id="edit_item {{todoId}}">Edit</a>
-							<a href="#" class="delete_item" id="delete_item {{todoId}}">Delete</a></span>
+							<a href="#" class="delete_item" id="delete_item {{todoId}}">Delete</a>
+							<a href="#" class="archive_item" id="archive_item {{todoId}}">Archive</a></span>
 						</li>
 					{{/todos}}
-					<li id="last">
+					<li class="last">
 						<a href="#" class="add_item" id="add_item {{id}}">Add Item</a>
 						<a href="#" class="delete_list" id="delete_list {{id}}">Delete List</a>
-						<a href="#" class="archive_items" id="archive_items {{id}}">Archive</a>
+						
 					</li>
 				</ul>
 			</div>

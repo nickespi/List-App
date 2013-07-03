@@ -41,6 +41,43 @@ var toDoLists =  [
   }
 ];
 
+var archive = [];
+
+var listTitles = [];
+
+var unique = function(origArr) {
+    var newArr = [],
+        origLen = origArr.length,
+        found,
+        x, y;
+ 
+    for ( x = 0; x < origLen; x++ ) {
+        found = undefined;
+        for ( y = 0; y < newArr.length; y++ ) {
+            if ( origArr[x].name === newArr[y].name ) { 
+              found = true;
+              break;
+            }
+        }
+        if ( !found) newArr.push( origArr[x] );    
+    }
+   return newArr;
+}
+
+function titleList() {
+  listTitles.length = 0;
+  for (var i = 0; i < archive.length; i++) {
+    var listTitle = archive[i].list;
+    var listId = archive[i].listId;
+
+    console.log(listTitle);
+    listTitles.push({"name": listTitle, "class": listId});
+  }
+}
+
+// titleList();
+
+// listTitles = unique(listTitles);
 
 function newList(e) {
   if (e.preventDefault) {
@@ -80,7 +117,6 @@ function removeList (e) {
 
     initElement();
 }
-
 
 function newItem (e) {
   if (e.preventDefault) {
@@ -195,6 +231,90 @@ function completeItem (e) {
   initElement();
 }
 
+function toArchive (e) {
+  if (e.preventDefault) {
+    e.preventDefault();
+  }
+  var whichItemId = this.id; //get id found in delete_item link
+  var whichList = this.parentNode.parentNode.parentNode.id; //get id of List containing Todo to be deleted
+  console.log(whichItemId);
+    for (var i = 0; i < toDoLists.length; i++) {
+      if ("todo_list" + " " + toDoLists[i].id === whichList) {
+        var list = toDoLists[i];
+
+        for (var e = 0; e < list.todos.length; e++) {
+          var theOne = list.todos[e];
+          if ("archive_item" + " " + theOne.todoId === whichItemId) {
+            
+            var newToDo = {};
+            newToDo.todo = theOne.todo;
+            newToDo.todoId = theOne.todoId;
+            newToDo.list = list.title;
+            newToDo.listId = list.id;
+            archive.push(newToDo);
+            titleList();
+            listTitles = unique(listTitles);
+            console.log(listTitles);
+            list.todos.splice(e, 1);
+            console.log("Archived todo " + theOne.todo);
+          }
+        }
+      }
+    }
+
+  localStorage.setItem('toDoLists', JSON.stringify(toDoLists));
+  localStorage.setItem('archive', JSON.stringify(archive));
+  localStorage.setItem('listTitles', JSON.stringify(listTitles));
+
+  initElement();
+}
+
+function unArchive (e) {
+  if (e.preventDefault) {
+    e.preventDefault();
+  }
+  var whichItemId = this.id; //get id found in delete_item link
+
+        for (var e = 0; e < archive.length; e++) {
+          var theOne = archive[e];
+          if ("promote_item" + " " + theOne.todoId === whichItemId) {
+            for (var i = 0; i < toDoLists.length; i++) {
+              var whichList = toDoLists[i];
+              if (whichList.id === theOne.listId) {
+                var newToDo = {};
+                newToDo.todo = theOne.todo;
+                newToDo.todoId = theOne.todoId;
+                newToDo.todoStatus = "active";
+                whichList.todos.push(newToDo);
+                archive.splice(e, 1);
+                console.log("Unarchived todo " + theOne.todo);
+                titleList();
+                listTitles = unique(listTitles);
+              }
+            }
+          }
+        }
+
+  localStorage.setItem('toDoLists', JSON.stringify(toDoLists));
+  localStorage.setItem('archive', JSON.stringify(archive));
+  localStorage.setItem('listTitles', JSON.stringify(listTitles));
+
+  initElement();
+}
+
+function archiveFilter (e) {
+  if(e.preventDefault) {
+    e.preventDefault();
+  }
+  var whichItemId = this.id;
+  if (whichItemId === "all") {
+    $(".list_wrap").show();
+  } else {
+    $(".list_wrap").hide();
+    $("." + whichItemId).show();
+  }
+}
+
 function taskToggle (e) {
   if (e.preventDefault) {
     e.preventDefault();
@@ -241,17 +361,34 @@ function listToggle (e) {
 
 function initElement () {
 
-  var retrievedObject = localStorage.getItem('toDoLists');
+  var retrievedToDoLists = localStorage.getItem('toDoLists');
+  var retrievedArchive = localStorage.getItem('archive');
+  var retrievedListTitles = localStorage.getItem('listTitles');
   
-  if (retrievedObject) {
-    toDoLists = JSON.parse(retrievedObject);
+  if (retrievedToDoLists) {
+    toDoLists = JSON.parse(retrievedToDoLists);
+  }
+
+  if (retrievedArchive) {
+    archive = JSON.parse(retrievedArchive);
   }
   
+  if (retrievedListTitles) {
+    listTitles = JSON.parse(retrievedListTitles);
+  }
+
   $(function() {
       var template = $('#todo-template').html();
       var info = Mustache.to_html(template, {lists: toDoLists});
       $('#lists').html(info);
       $('#lists').masonry( 'reloadItems' );
+    });
+
+  $(function() {
+      var template = $('#archive-template').html();
+      var info = Mustache.to_html(template, {lists: archive, titles: listTitles});
+      $('#archived').html(info);
+      $('#archived').masonry( 'reloadItems' );
     });
 
   var addList = document.getElementById("addList");
@@ -275,6 +412,21 @@ function initElement () {
   var deleteItem = document.getElementsByClassName("delete_item");
   for (var i = 0; i < deleteItem.length; i++) {
     deleteItem[i].onclick = removeItem;
+  }
+
+  var archiveItem = document.getElementsByClassName("archive_item");
+  for (var i = 0; i < archiveItem.length; i++) {
+    archiveItem[i].onclick = toArchive;
+  }
+
+  var promoteItem = document.getElementsByClassName("promote_item");
+  for (var i = 0; i < promoteItem.length; i++) {
+    promoteItem[i].onclick = unArchive;
+  }
+
+  var filter = document.getElementsByClassName("filter");
+  for (var i = 0; i < filter.length; i++) {
+    filter[i].onclick = archiveFilter;
   }
 
   var toggleStatus = document.getElementsByClassName("toggle_status");

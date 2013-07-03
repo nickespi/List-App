@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html class="ie ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie ie7"> <![endif]-->
@@ -31,11 +33,11 @@
 	  <script type="text/javascript" src="//use.typekit.net/yrx5fia.js"></script>
 	  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	  
-	  <title><!--$projectName--> | <!--$pageTitle--></title>
+	  <title>List App | Archive</title>
 	  
 	</head>
 
-	<body onload="initElement()" class="<!--$pageClass-->">
+	<body onload="initElement()" class="archive">
 
 	<div class="wrapper">
 	  
@@ -46,7 +48,7 @@
     		<a class="navi" href="#">List App<span>&#9776</span></a>
 		</div>
 
-	  	<h1 id="branding"><!--$projectName--></h1>
+	  	<h1 id="branding">List App</h1>
 
 		<nav id="nav_pri">
 		  <ul>
@@ -57,3 +59,50 @@
 		</nav>
 		<a href="#" id="addList"><span class="plus">+</span><p>Add List</p></a>
 	 </header>
+
+	<section role="main">
+		<div id="main">
+			<div id="archived"></div>
+		</div>
+	 </section>
+	 
+	 
+	  	<script id="archive-template" type="text/template">
+	  		<ul class="archive_titles">
+	  			<li>Filter:</li>
+	  			<li><a href="#" id="all" class="filter">All</a>
+	  		{{#titles}}
+	  			<li><a href="#" id="{{class}}" class="filter">{{name}}</a>
+	  		{{/titles}}
+	  		</ul>
+		  	{{#lists}}
+		  	<div class="list_wrap {{listId}}">
+			  	<ul class="todo_list" id="todo_list {{id}}">	
+						<li>
+							<p class="toggle_status" id="complete_item {{todoId}}">{{todo}}</p>
+							<p class="archive_list_title">{{list}}</p>
+							<span><a class="task_toggle" href="#">&#43;</a></span>
+							<span class="tasks">
+								<a href="#" class="promote_item" id="promote_item {{todoId}}">Unarchive</a>
+							</span>
+						</li>
+				</ul>
+			</div>
+			{{/lists}}
+	  	</script>
+
+		
+
+
+	<div class="push"></div>
+	</div> <!-- end wrapper -->
+	 
+	 <footer>
+		<div class="footer_wrapper">
+			<small>List App | Built by <a href="http://nickespinosa.com">Nick Espinosa</a></small>
+		</div>
+	 </footer>
+
+	</body>
+
+</html>

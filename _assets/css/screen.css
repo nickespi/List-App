@@ -418,7 +418,7 @@ caption {
         @media only screen and (max-width: 600px) {
           .list_wrap ul.todo_list li:hover, .list_wrap ul.todo_list li:focus {
             background-color: #ebf7fd; } }
-      .list_wrap ul.todo_list li:last-child {
+      .list_wrap ul.todo_list li.last {
         background-color: #fff;
         background-image: -webkit-linear-gradient(top, #f4fbfe, white);
         border-bottom: none; }
@@ -427,24 +427,31 @@ caption {
       .list_wrap ul.todo_list li .delete_item,
       .list_wrap ul.todo_list li .delete_list,
       .list_wrap ul.todo_list li .complete_item,
-      .list_wrap ul.todo_list li .archive_items {
+      .list_wrap ul.todo_list li .archive_item,
+      .list_wrap ul.todo_list li .promote_item {
         font-size: .8em; }
       .list_wrap ul.todo_list li .edit_item,
       .list_wrap ul.todo_list li .delete_item,
-      .list_wrap ul.todo_list li .complete_item {
+      .list_wrap ul.todo_list li .complete_item,
+      .list_wrap ul.todo_list li .archive_item,
+      .list_wrap ul.todo_list li .promote_item {
         display: none;
         position: absolute;
         bottom: 0px; }
         @media only screen and (max-width: 600px) {
           .list_wrap ul.todo_list li .edit_item,
           .list_wrap ul.todo_list li .delete_item,
-          .list_wrap ul.todo_list li .complete_item {
+          .list_wrap ul.todo_list li .complete_item,
+          .list_wrap ul.todo_list li .archive_item,
+          .list_wrap ul.todo_list li .promote_item {
             display: inline;
             top: 38%; } }
-      .list_wrap ul.todo_list li .edit_item {
+      .list_wrap ul.todo_list li .edit_item,
+      .list_wrap ul.todo_list li .promote_item {
         left: 10px; }
         @media only screen and (max-width: 600px) {
-          .list_wrap ul.todo_list li .edit_item {
+          .list_wrap ul.todo_list li .edit_item,
+          .list_wrap ul.todo_list li .promote_item {
             left: 40px;
             font-size: 1em; } }
       .list_wrap ul.todo_list li .delete_item {
@@ -453,16 +460,17 @@ caption {
           .list_wrap ul.todo_list li .delete_item {
             left: 90px;
             font-size: 1em; } }
+      .list_wrap ul.todo_list li .archive_item {
+        left: 85px; }
+        @media only screen and (max-width: 600px) {
+          .list_wrap ul.todo_list li .archive_item {
+            left: 158px;
+            font-size: 1em; } }
       .list_wrap ul.todo_list li .add_item,
-      .list_wrap ul.todo_list li .delete_list,
-      .list_wrap ul.todo_list li .archive_items {
+      .list_wrap ul.todo_list li .delete_list {
         border-bottom: 1px solid rgba(17, 119, 170, 0.2);
         margin-right: 3px; }
-      .list_wrap ul.todo_list li .archive_items {
-        display: none; }
-      .list_wrap ul.todo_list li .archive_items_active {
-        display: inline; }
-      .list_wrap ul.todo_list li:hover .edit_item, .list_wrap ul.todo_list li:hover .delete_item, .list_wrap ul.todo_list li:hover .complete_item {
+      .list_wrap ul.todo_list li:hover .edit_item, .list_wrap ul.todo_list li:hover .delete_item, .list_wrap ul.todo_list li:hover .complete_item, .list_wrap ul.todo_list li:hover .archive_item, .list_wrap ul.todo_list li:hover .promote_item {
         display: inline; }
       @media only screen and (max-width: 600px) {
         .list_wrap ul.todo_list li span.tasks {
@@ -490,7 +498,8 @@ caption {
 .touch .list_wrap ul.todo_list li {
   padding-right: 50px; }
   .touch .list_wrap ul.todo_list li .edit_item,
-  .touch .list_wrap ul.todo_list li .delete_item {
+  .touch .list_wrap ul.todo_list li .delete_item,
+  .touch .list_wrap ul.todo_list li .archive_item {
     display: inline;
     top: 38%;
     font-size: 1em; }
@@ -498,6 +507,8 @@ caption {
     left: 20px; }
   .touch .list_wrap ul.todo_list li .delete_item {
     left: 68px; }
+  .touch .list_wrap ul.todo_list li .archive_item {
+    left: 133px; }
   .touch .list_wrap ul.todo_list li span.tasks {
     display: none;
     height: 100%;
@@ -512,6 +523,28 @@ caption {
     top: 16%;
     right: 20px;
     z-index: 4; }
+
+#archived {
+  margin-top: 20px; }
+
+ul.archive_titles {
+  margin-bottom: 40px; }
+  ul.archive_titles li {
+    list-style-type: none;
+    display: inline-block;
+    margin-left: 0.96154%;
+    margin-bottom: 10px; }
+    ul.archive_titles li a {
+      padding: 3px 10px;
+      text-align: center;
+      background-color: #1387c1;
+      color: #fff;
+      cursor: pointer; }
+
+.archive_list_title {
+  color: #1177aa;
+  font-size: .8em;
+  margin-top: 0; }
 
 #addList {
   float: right;
@@ -532,7 +565,8 @@ caption {
     border-radius: 50%;
     background-color: #d8f0fb; }
 
-.purpose_page #addList {
+.purpose_page #addList,
+.archive #addList {
   display: none; }
 
 #new-item {
