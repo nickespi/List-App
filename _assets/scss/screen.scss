@@ -764,7 +764,7 @@ caption {
 
 	.promote_item {
 		right: 10px;
-		@include breakpoint(handhelds) { left: 40px; font-size: 1em; }
+		@include breakpoint(handhelds) { left: 40px; font-size: 1em; right: auto;}
 	}
 }
 

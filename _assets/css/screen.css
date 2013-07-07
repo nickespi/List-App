@@ -532,7 +532,8 @@ caption {
     @media only screen and (max-width: 600px) {
       #archived .promote_item {
         left: 40px;
-        font-size: 1em; } }
+        font-size: 1em;
+        right: auto; } }
 
 ul.archive_titles {
   margin-bottom: 40px; }
