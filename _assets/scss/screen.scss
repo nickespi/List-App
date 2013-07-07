@@ -53,6 +53,7 @@ header {
 .ie6 .not_supported,
 .ie7 .not_supported,
 .ie8 .not_supported {
+		display: inline;
 		float: left;
 		width: 100%;
 		margin-bottom: 20px;
@@ -648,8 +649,7 @@ caption {
 				bottom: 0px;
 			}
 			
-			.edit_item,
-			.promote_item {
+			.edit_item {
 				left: 10px;
 				@include breakpoint(handhelds) { left: 40px; font-size: 1em; }
 			}
@@ -757,6 +757,15 @@ caption {
 }
 #archived {
 	margin-top: 20px;
+
+	.toggle_status {
+		margin-top: 0;
+	}
+
+	.promote_item {
+		right: 10px;
+		@include breakpoint(handhelds) { left: 40px; font-size: 1em; }
+	}
 }
 
 ul.archive_titles {
@@ -781,7 +790,7 @@ ul.archive_titles {
 .archive_list_title {
 	color: $maincolor;
 	font-size: .8em;
-	margin-top: 0;
+	margin-bottom: 0;
 }
 
 

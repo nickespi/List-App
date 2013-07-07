@@ -59,6 +59,7 @@ header {
 .ie6 .not_supported,
 .ie7 .not_supported,
 .ie8 .not_supported {
+  display: inline;
   float: left;
   width: 100%;
   margin-bottom: 20px;
@@ -446,12 +447,10 @@ caption {
           .list_wrap ul.todo_list li .promote_item {
             display: inline;
             top: 38%; } }
-      .list_wrap ul.todo_list li .edit_item,
-      .list_wrap ul.todo_list li .promote_item {
+      .list_wrap ul.todo_list li .edit_item {
         left: 10px; }
         @media only screen and (max-width: 600px) {
-          .list_wrap ul.todo_list li .edit_item,
-          .list_wrap ul.todo_list li .promote_item {
+          .list_wrap ul.todo_list li .edit_item {
             left: 40px;
             font-size: 1em; } }
       .list_wrap ul.todo_list li .delete_item {
@@ -526,6 +525,14 @@ caption {
 
 #archived {
   margin-top: 20px; }
+  #archived .toggle_status {
+    margin-top: 0; }
+  #archived .promote_item {
+    right: 10px; }
+    @media only screen and (max-width: 600px) {
+      #archived .promote_item {
+        left: 40px;
+        font-size: 1em; } }
 
 ul.archive_titles {
   margin-bottom: 40px; }
@@ -544,7 +551,7 @@ ul.archive_titles {
 .archive_list_title {
   color: #1177aa;
   font-size: .8em;
-  margin-top: 0; }
+  margin-bottom: 0; }
 
 #addList {
   float: right;

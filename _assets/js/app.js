@@ -24,7 +24,7 @@ var toDoLists =  [
       },
       {
         todoId: id(),
-        todoStatus: 'active',
+        todoStatus: 'completed',
         todo: "A Clash of Kings"
       },
       {
@@ -34,7 +34,7 @@ var toDoLists =  [
       },
       {
         todoId: id(),
-        todoStatus: 'completed',
+        todoStatus: 'active',
         todo: "A Feast for Crows"
       }
     ]
@@ -80,9 +80,7 @@ function titleList() {
 // listTitles = unique(listTitles);
 
 function newList(e) {
-  if (e.preventDefault) {
-    e.preventDefault();
-  }
+  e.preventDefault();
   console.log(toDoLists);
   var listName = prompt("What is your new list's name?");
   if (listName !== null && listName !== "") {
@@ -99,9 +97,7 @@ function newList(e) {
 }
 
 function removeList (e) {
-  if (e.preventDefault) {
-    e.preventDefault();
-  }
+  e.preventDefault();
   var whichList = this.id;
   console.log(whichList);
   var areYouSure = confirm("Are you sure?");
@@ -119,9 +115,7 @@ function removeList (e) {
 }
 
 function newItem (e) {
-  if (e.preventDefault) {
-    e.preventDefault();
-  }
+  e.preventDefault();
   var whichList = this.id;
   var listItem = prompt("What is your to-do?");
   for (var i = 0; i < toDoLists.length; i++) {
@@ -143,9 +137,7 @@ function newItem (e) {
 }
 
 function replaceItem (e) {
-  if (e.preventDefault) {
-    e.preventDefault();
-  }
+  e.preventDefault();
   var whichItemId = this.id; //get id found in edit_item link
   var whichList = this.parentNode.parentNode.parentNode.id; //get id of List containing Todo to be edited
 
@@ -174,9 +166,7 @@ function replaceItem (e) {
 }
 
 function removeItem (e) {
-  if (e.preventDefault) {
-    e.preventDefault();
-  }
+  e.preventDefault();
   var whichItemId = this.id; //get id found in delete_item link
   var whichList = this.parentNode.parentNode.parentNode.id; //get id of List containing Todo to be deleted
 
@@ -201,9 +191,7 @@ function removeItem (e) {
 }
 
 function completeItem (e) {
-  if (e.preventDefault) {
-    e.preventDefault();
-  }
+  e.preventDefault();
   var whichItemId = this.id; //get id found in edit_item link
   var whichList = this.parentNode.parentNode.id; //get id of List containing Todo to be edited
   for (var i = 0; i < toDoLists.length; i++) {
@@ -232,9 +220,7 @@ function completeItem (e) {
 }
 
 function toArchive (e) {
-  if (e.preventDefault) {
-    e.preventDefault();
-  }
+  e.preventDefault();
   var whichItemId = this.id; //get id found in delete_item link
   var whichList = this.parentNode.parentNode.parentNode.id; //get id of List containing Todo to be deleted
   console.log(whichItemId);
@@ -270,9 +256,7 @@ function toArchive (e) {
 }
 
 function unArchive (e) {
-  if (e.preventDefault) {
-    e.preventDefault();
-  }
+  e.preventDefault();
   var whichItemId = this.id; //get id found in delete_item link
 
         for (var e = 0; e < archive.length; e++) {
@@ -290,7 +274,7 @@ function unArchive (e) {
                 console.log("Unarchived todo " + theOne.todo);
                 titleList();
                 listTitles = unique(listTitles);
-              }
+              } 
             }
           }
         }
@@ -303,9 +287,7 @@ function unArchive (e) {
 }
 
 function archiveFilter (e) {
-  if(e.preventDefault) {
-    e.preventDefault();
-  }
+  e.preventDefault();
   var whichItemId = this.id;
   if (whichItemId === "all") {
     $(".list_wrap").show();
@@ -316,9 +298,7 @@ function archiveFilter (e) {
 }
 
 function taskToggle (e) {
-  if (e.preventDefault) {
-    e.preventDefault();
-  }
+  e.preventDefault();
   var whichItem = this.parentNode.nextSibling.nextSibling;
   console.log(whichItem);
 
@@ -336,9 +316,7 @@ function taskToggle (e) {
 }
 
 function listToggle (e) {
-  if (e.preventDefault) {
-    e.preventDefault();
-  }
+  e.preventDefault();
   var whichItem = this.nextSibling.nextSibling;
   var whichItemId = whichItem.id;
   console.log(whichItem);
