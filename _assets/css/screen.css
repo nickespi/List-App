@@ -1,9 +1,9 @@
 @font-face {
-  font-family: 'Entypo';
-  src: url("fonts/entypo.eot");
-  /* IE9 Compat Modes */
-  src: url("fonts/entypo.woff") format("woff"), url("fonts/entypo.ttf") format("truetype");
-  /* Safari, Android, iOS */ }
+  font-family: "SSStandard";
+  src: url("fonts/ss-standard.eot");
+  src: url("fonts/ss-standard.eot?#iefix") format("embedded-opentype"), url("fonts/ss-standard.woff") format("woff"), url("fonts/ss-standard.ttf") format("truetype"), url("fonts/ss-standard.svg#SSStandard") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 
 * {
   margin: 0; }
@@ -145,11 +145,11 @@ header {
     height: 100%;
     position: relative; }
     .mobile-header a.navi span {
-      font-family: "Entypo";
+      font-family: "SSStandard";
       position: absolute;
       right: 10px;
-      top: -16px;
-      font-size: 2.65em; }
+      top: 12px;
+      font-size: 1.1em; }
   .mobile-header .navi_vert ul {
     list-style-type: none;
     margin: 0; }
